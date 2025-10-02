@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partners Logo Section</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: #f4f6f8;
+    color: #222;
+  }
+
+  .partners-section {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .partners-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+
+  /* LOGO GRID */
+  .partners-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+  }
+
+  .partner-logo {
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .partner-logo img {
+    max-width: 100%;
+    max-height: 60px;
+    object-fit: contain;
+  }
+
+  /* Hover animation */
+  .partner-logo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  /* 📱 MOBILE STYLES */
+  @media (max-width: 768px) {
+    .partners-logos {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
+</head>
+<body>
+
+<section class="partners-section">
+  <h2>Our Patron Members and Programme Partners</h2>
+  <div class="partners-logos">
+    <!-- 16 Placeholder Logos -->
+    <div class="partner-logo"><img src="KASCOTEN IMAGES/PARTNERS LOGO/AMMASCO LUBRICANTS.jpeg" alt="Logo 1"></div>
+    <div class="partner-logo"><img src="KASCOTEN IMAGES/PARTNERS LOGO/AMMASCO RAD.png" alt="Logo 2"></div>
+    <div class="partner-logo"><img src="KASCOTEN IMAGES/PARTNERS LOGO/PACKMATE.svg" alt="Logo 3"></div>
+    <div class="partner-logo"><img src="KASCOTEN IMAGES/PARTNERS LOGO/DALA FOODS.jpg" alt="Logo 4"></div>
+    <div class="partner-logo"><img src="KASCOTEN IMAGES/PARTNERS LOGO/DANMARNA.png" alt="Logo 5"></div>
+    <div class="partner-logo"><img src="KASCOTEN IMAGES/PARTNERS LOGO/ETHIOPIAN AIRLINE.svg" alt="Logo 6"></div>
+    <div class="partner-logo"><img src="KASCOTEN IMAGES/PARTNERS LOGO/JALLA RADIO.jpeg" alt="Logo 7"></div>
+    <div class="partner-logo"><img src="KASCOTEN IMAGES/PARTNERS LOGO/LOTUS.svg" alt="Logo 8"></div>
+    <div class="partner-logo"><img src="KASCOTEN IMAGES/PARTNERS LOGO/SOLI-AIR.webp" alt="Logo 9"></div>
+    <div class="partner-logo"><img src="KASCOTEN IMAGES/PARTNERS LOGO/TIME BASE.jpg" alt="Logo 10"></div>
+    <div class="partner-logo"><img src="KASCOTEN IMAGES/PARTNERS LOGO/WINGSCOPRP.png" alt="Logo 11"></div>
+    <div class="partner-logo"><img src="KASCOTEN IMAGES/PARTNERS LOGO/TM YOLA.png" alt="Logo 12"></div>
+    <div class="partner-logo"><img src="KASCOTEN IMAGES/PARTNERS LOGO/" alt="Logo 13"></div>
+    <div class="partner-logo"><img src="" alt="Logo 14"></div>
+    <div class="partner-logo"><img src="" alt="Logo 15"></div>
+    <div class="partner-logo"><img src="" alt="Logo 16"></div>
+  </div>
+</section>
+
+</body>
+</html>

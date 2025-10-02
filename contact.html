@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KASCOTEN - Kano Council of Traders and Entrepreneurs</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@700&family=Alegreya:wght@400;500&display=swap" rel="stylesheet" />
+  
+  <script src="https://kit.fontawesome.com/YOUR_KIT_ID.js" crossorigin="anonymous"></script> 
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  
+  
+  
+  <!-- Phone Navigation -->
+  <header class="main-header">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <img src="https://res.cloudinary.com/dfvumcrsy/image/upload/v1753020566/kascote_white_bg_logo_qchqim.png" alt="KASCOTEN Logo">
+     
+        
+        
+      </a>
+      <nav class="desktop-nav">
+  <a href="#help-section">What we offer</a>
+  <a href="annual-events.html">Annual Events</a>
+  <a href="commitees.html">Commitees</a>
+  <a href="news.html">News & Insights</a>
+  <a href="leadership.html">Our Leadership</a>
+  <a href="contact.html">Contact Us</a>
+</nav>
+      <div class="cta-buttons">
+<a href="https://forms.gle/x1pk8bJcTWS92SMa9" target="_blank">
+  <button class="btn-join">JOIN KASCOTEN</button>
+</a>    </div>
+
+      
+      
+      <div class="nav-icons">
+        <!-- <button class="icon-btn search-btn" aria-label="Search">
+          <svg width="20" height="20" fill="none" stroke="#06402b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="9" r="7"></circle>
+            <line x1="15" y1="15" x2="20" y2="20"></line>
+          </svg>
+        </button>   -->
+        <button class="icon-btn menu-btn" id="openMenu" aria-label="Menu">
+          <svg width="24" height="24" fill="none" stroke="#06402b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Overlay Menu -->
+    <div class="overlay-menu" id="overlayMenu">
+      <div class="overlay-header">
+        <img src="https://res.cloudinary.com/dfvumcrsy/image/upload/v1753020566/kascote_white_bg_logo_qchqim.png" alt="KASCOTEN Logo">
+        <button class="icon-btn close-btn" id="closeMenu" aria-label="Close">
+          <svg width="24" height="24" fill="none" stroke="#06402b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <nav class="overlay-nav">
+  <a href="#help-section">What we offer →</a>
+  <a href="annual-events.html">Annual Events →</a>
+  <a href="commitees.html">Commitees →</a>
+  <a href="news.html">News & Insights →</a>
+  <a href="leadership.html">Our Leadership →</a>
+  <a href="contact.html">Contact Us →</a>
+      </nav>
+    </div>
+  </header>
+
+
+
+<section class="contact-hero animated-fadein">
+  <h1>We’d Love to Hear from You</h1>
+  <button class="contact-btn" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'})">Send Us a Message</button>
+</section>
+
+<section class="contact-details">
+  <div class="contact-info-grid">
+    <div class="contact-info-card animated-up">
+      <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+      <h4>Address</h4>
+      <p>First Floor 138 Ibrahim Taiwo Road,<br>Opposite A Y Shafa Filling Station,<br>Kano State, Nigeria.</p>
+    </div>
+    <div class="contact-info-card animated-up" style="animation-delay:0.1s">
+      <div class="contact-icon"><i class="fas fa-phone"></i></div>
+      <h4>WhatsApp</h4>
+      <p>+234 809 266 0200</p>
+    </div>
+    <div class="contact-info-card animated-up" style="animation-delay:0.2s">
+      <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+      <h4>Email</h4>
+      <p>kanokascote@gmail.com</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact-form-section">
+  <div class="contact-form-wrapper animated-fadein">
+    <form id="contact-form" autocomplete="off">
+      <h2>Send Us a Message</h2>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit" class="contact-btn">Send</button>
+      <div id="form-message"></div>
+    </form>
+  </div>
+</section>
+
+<section class="contact-map-section">
+  <h2 class="map-subheading">Find Us On the Map</h2>
+  <iframe
+    src="https://www.google.com/maps?q=First+Floor+138+Ibrahim+Taiwo+Road,+Opposite+A+Y+Shafa+Filling+Station,+Kano+State,+Nigeria.&output=embed"
+    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
+
+
+<section class="contact-faq-cta">
+ <h2>Frequently Asked Questions</h2>
+<div class="faq-list" id="faqList">
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      <span>How can I become a member?</span>
+      <i class="fas fa-chevron-down"></i>
+    </button>
+    <div class="faq-answer">
+      Visit our membership section or contact us directly using the form above.
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      <span>Where are you located?</span>
+      <i class="fas fa-chevron-down"></i>
+    </button>
+    <div class="faq-answer">
+      We are based at First Floor 138 Ibrahim Taiwo Road, Opposite A Y Shafa Filling Station, Kano State, Nigeria. See the map above for our exact location.
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      <span>How do I partner or sponsor?</span>
+      <i class="fas fa-chevron-down"></i>
+    </button>
+    <div class="faq-answer">
+      Contact us via email or phone, or use the form to express your interest.
+    </div>
+  </div>
+  <!-- Add more FAQ items as needed -->
+</div>
+<div class="cta-center">
+  <a href="https://forms.gle/x1pk8bJcTWS92SMa9" class="contact-btn" target="_blank">Join KASCOTEN</a>
+</div>
+</section>
+
+
+
+
+
+<footer class="kascoten-footer">
+  <div class="footer-container">
+    <!-- Logo and Description -->
+    <div class="footer-logo">
+      <h2>KASCOTEN & KASCOTE</h2>
+      <p>
+        Empowering Kano’s traders, farmers, and entrepreneurs through 
+        partnerships, exhibitions, trade missions, and policy advocacy.
+      </p>
+    </div>
+
+    <!-- Services -->
+    <div class="footer-section">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Annual Events</a></li>
+        <li><a href="#">Trade Missions</a></li>
+        <li><a href="#">Local Exhibitions</a></li>
+        <li><a href="#">Policy Advocacy</a></li>
+      </ul>
+    </div>
+
+    <!-- Membership & Benefits -->
+    <div class="footer-section">
+      <h4>Membership & Benefits</h4>
+      <ul>
+        <li><a href="#">Membership Overview</a></li>
+        <li><a href="#">Join KASCOTEN</a></li>
+        <li><a href="#">B2B Networking</a></li>
+        <li><a href="#">Sponsorship Benefits</a></li>
+        <li><a href="#">Partnership Opportunities</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact and Social Links -->
+    <div class="footer-contact">
+      <a href="#" class="contact-btn">CONTACT US</a>
+      <h4>Connect with Us</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
