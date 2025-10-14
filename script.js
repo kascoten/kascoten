@@ -1,3 +1,25 @@
+
+
+// ============================
+// Header Hide on Scroll
+// ============================
+let lastScrollY = window.scrollY;
+const header = document.querySelector('.main-header');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > lastScrollY && window.scrollY > 80) {
+    // Scrolling down
+    header.classList.add('hide');
+  } else {
+    // Scrolling up
+    header.classList.remove('hide');
+  }
+  lastScrollY = window.scrollY;
+});
+// ...existing code...
+
+
+
 // ============================
 // Mobile Menu
 // ============================
@@ -119,7 +141,7 @@ prevSlideBtn.addEventListener('click', () => {
 
 playPauseBtn.addEventListener('click', () => {
   autoSlide = !autoSlide;
-  playPauseBtn.textContent = autoSlide ? '||' : '>';
+  playPauseBtn.textContent = autoSlide ? '||' : ' ▶';
   if (autoSlide) {
     slideInterval = setInterval(nextSlide, 6000);
   } else {
