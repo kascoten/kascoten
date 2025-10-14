@@ -141,7 +141,7 @@ prevSlideBtn.addEventListener('click', () => {
 
 playPauseBtn.addEventListener('click', () => {
   autoSlide = !autoSlide;
-  playPauseBtn.textContent = autoSlide ? '||' : ' ▶';
+  playPauseBtn.textContent = autoSlide ? '||' : '▶';
   if (autoSlide) {
     slideInterval = setInterval(nextSlide, 6000);
   } else {
@@ -257,4 +257,3 @@ if (document.readyState === "loading") {
 // ============================
 
 
-})

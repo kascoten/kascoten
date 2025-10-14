@@ -354,7 +354,7 @@ a {
 
 .pagination span {
   width: 20px;
-  height: 6px;
+  height: 3px;
   background: var(--white);
   display: inline-block;
   transition: all 0.3s;
