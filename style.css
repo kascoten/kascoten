@@ -324,8 +324,72 @@ a {
 
 /* ========================
    Carousel Controls
-======================== */
+   ======================== */
+
+
+
+
+/* ...existing code... */
+
+/* Make carousel controls wrap and center on small screens */
 .carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  z-index: 50;
+  flex-wrap: wrap; /* allow wrap to new lines when space is limited */
+}
+
+/* Keep pagination full-width and centered when it wraps */
+.carousel-controls .pagination {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+/* Ensure buttons keep their box size so layout is stable */
+.control-btn {
+  flex: 0 0 auto;
+}
+
+/* Mobile overrides */
+@media (max-width: 768px) {
+  .carousel-controls {
+    left: 50% !important;
+    transform: translateX(-50%);
+    width: calc(100% - 2rem);
+    padding: 0.5rem 1rem;
+    bottom: 0.5rem;
+    justify-content: center;
+  }
+
+  /* Place pagination on its own row */
+  .carousel-controls .pagination {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.35rem;
+    flex-wrap: wrap;
+  }
+
+  /* Keep control buttons on the first row */
+  .control-btn.play-pause { order: 0; }
+  .control-btn.prev,
+  .control-btn.next { order: 1; }
+
+  /* Slightly smaller pagination indicators */
+  .pagination span {
+    width: 14px;
+    height: 4px;
+  }
+  .pagination span.active { width: 34px; }
+}
+
+/* ...existing code... */
+
+
+
+   .carousel-controls {
   position: absolute;
   bottom: 2rem;
   left: 2rem;
@@ -334,6 +398,9 @@ a {
   gap: 0.8rem;
   z-index: 50;
 }
+
+
+
 
 .control-btn {
   background: none;
