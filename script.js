@@ -7,7 +7,7 @@ let lastScrollY = window.scrollY;
 const header = document.querySelector('.main-header');
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > lastScrollY && window.scrollY > 80) {
+  if (window.scrollY > lastScrollY && window.scrollY > 45) {
     // Scrolling down
     header.classList.add('hide');
   } else {

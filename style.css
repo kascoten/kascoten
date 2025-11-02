@@ -126,10 +126,10 @@ a {
 /* ...existing code... */
 .main-header.hide {
   transform: translateY(-100%);
-  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); /* slower and smoother */
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* slower and smoother */
 }
 .main-header {
-  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); /* ensure both states have same duration */
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* ensure both states have same duration */
 }
 /* ...existing code... */
 
