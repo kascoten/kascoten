@@ -1,6 +1,5 @@
+//import { auth, provider, db } from '../firebase.js';
 
-import { db, auth, provider } from './firebase.js';
-import { signInWithPopup } from "firebase/auth";
 
 // ============================
 // Header Hide on Scroll
@@ -221,45 +220,59 @@ menuItems.forEach(item => {
 
 
 // Contact Form Submission (Demo Only)
-const form = document.getElementById('contact-form');
-const msg = document.getElementById('form-message');
-if (form) {
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    msg.textContent = "Thank you for contacting us! We'll get back to you soon.";
-    msg.style.color = "#06402b";
-    form.reset();
-    setTimeout(() => { msg.textContent = ""; }, 5000);
-  });
-}
+document.addEventListener('DOMContentLoaded', function() {
+  // Contact Form
+  const form = document.getElementById('contact-form');
+  const msg = document.getElementById('form-message');
+  if(form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      msg.textContent = "Thank you for contacting us! We'll get back to you soon.";
+      msg.style.color = "#06402b";
+      form.reset();
+      setTimeout(() => { msg.textContent = ""; }, 5000);
+    });
+  }
 
-// FAQ Collapse
+ // FAQ Collapse
 function setupFAQCollapse() {
   document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', function() {
       const item = btn.closest('.faq-item');
       const open = item.classList.contains('open');
       document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!open) item.classList.add('open');
+      if(!open) item.classList.add('open');
       btn.setAttribute('aria-expanded', String(!open));
     });
   });
 }
 
-// Since this is a module, it runs after DOM is ready. We can call this directly.
-setupFAQCollapse();
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", setupFAQCollapse);
+} else {
+  setupFAQCollapse();
+}
 
 // ============================
-//FIREBSE LOGIN
+// CONTACT PAGE Functionality END
 // ============================
-const loginButton = document.getElementById("loginBtn");
-if (loginButton) {
-  loginButton.addEventListener("click", (e) => {
-    // If the button is inside an <a> tag, prevent the link from navigating
-    e.preventDefault(); 
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        alert(`Welcome, ${result.user.displayName}`);
-      }).catch((error) => console.error(error));
-  });
-}
+
+});
+
+
+// ============================
+//FIREBASE  SIGN IN WITH GOOGLE
+// ============================
+
+document.getElementById("loginBtn").addEventListener("click", () => {
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      const user = result.user;
+      alert(`Welcome, ${user.displayName}`);
+      console.log("User info:", user);
+    })
+    .catch((error) => {
+      console.error("Login error:", error);
+    });
+});
+
