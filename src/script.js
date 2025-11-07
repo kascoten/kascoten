@@ -1,4 +1,5 @@
-//import { auth, provider, db } from '../firebase.js';
+import { auth, provider, db } from '../firebase.js';
+import { signInWithPopup, signOut, onAuthStateChanged } from 'firebase/auth';
 
 
 // ============================
@@ -264,15 +265,37 @@ if (document.readyState === "loading") {
 //FIREBASE  SIGN IN WITH GOOGLE
 // ============================
 
-document.getElementById("loginBtn").addEventListener("click", () => {
+
+const loginBtn = document.getElementById("loginBtn");
+const logoutBtn = document.getElementById("logoutBtn");
+
+loginBtn.addEventListener("click", () => {
   signInWithPopup(auth, provider)
     .then((result) => {
       const user = result.user;
       alert(`Welcome, ${user.displayName}`);
-      console.log("User info:", user);
     })
     .catch((error) => {
       console.error("Login error:", error);
     });
+});
+
+logoutBtn.addEventListener("click", () => {
+  signOut(auth).then(() => {
+    alert("Logged out");
+  });
+});
+
+// Show/hide buttons based on login state
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    loginBtn.style.display = "none";
+    logoutBtn.style.display = "inline-block";
+    console.log("User signed in:", user.displayName);
+  } else {
+    loginBtn.style.display = "inline-block";
+    logoutBtn.style.display = "none";
+    console.log("No user signed in");
+  }
 });
 
