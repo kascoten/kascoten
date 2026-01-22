@@ -1,13 +1,28 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signInWithRedirect,
+  getRedirectResult,
+  signOut,
+  onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+import {
+  getFirestore,
+  doc,
+  setDoc,
+  getDoc,
+  serverTimestamp,
+  collection,
+  addDoc,
+  query,
+  orderBy,
+  onSnapshot,
+  deleteDoc
+} from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyCaNUTiyitKI-4rvjI6NC60RmxcEJA9OCk",
   authDomain: "kascoten1.firebaseapp.com",
@@ -17,10 +32,29 @@ const firebaseConfig = {
   appId: "1:848423451775:web:d8cd4f7612fc405269534a",
   measurementId: "G-JVD65Q1F3J"
 };
-//
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
+const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const provider = new GoogleAuthProvider();
+// Always show account chooser so users can select an account explicitly
+provider.setCustomParameters({ prompt: 'select_account' });
 export const db = getFirestore(app);
+
+// Re-export firestore helpers used by your script
+export {
+  doc,
+  setDoc,
+  getDoc,
+  serverTimestamp,
+  collection,
+  addDoc,
+  query,
+  orderBy,
+  onSnapshot,
+  deleteDoc,
+  signInWithPopup,
+  signInWithRedirect,
+  getRedirectResult,
+  signOut,
+  onAuthStateChanged
+};

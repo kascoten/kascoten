@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <!-- Ensure popups can be inspected by the opener (prevents COOP blocking window.closed) -->
+  <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin-allow-popups" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KASCOTEN - Kano Council of Traders and Entrepreneurs</title>
+  <title>KASCOTE - Kano Council of Traders and Entrepreneurs</title>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@700&family=Alegreya:wght@400;500&display=swap" rel="stylesheet" />
   
-  <script src="https://kit.fontawesome.com/YOUR_KIT_ID.js" crossorigin="anonymous"></script> 
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/5da3338349.js" crossorigin="anonymous"></script>
 
   <!-- CSS -->
   <link rel="stylesheet" href="src/style.css" />
@@ -22,8 +25,8 @@
   <header class="main-header">
     <div class="nav-container">
       <a href="#" class="logo">
-        <img src="https://res.cloudinary.com/dfvumcrsy/image/upload/v1753020566/kascote_white_bg_logo_qchqim.png" alt="KASCOTEN Logo">
-     
+        <!-- <img src="https://res.cloudinary.com/dfvumcrsy/image/upload/v1753020566/kascote_white_bg_logo_qchqim.png" alt="KASCOTE Logo"> -->
+        <img src="kascote logo.png" alt="kascote-logo">
         
         
       </a>
@@ -37,7 +40,14 @@
 </nav>
       <div class="cta-buttons">
 <!-- <a href="https://forms.gle/x1pk8bJcTWS92SMa9" target="_blank"> -->
-  <button id="loginBtn" class="btn-join">JOIN KASCOTEN</button>
+        <button id="loginBtn" class="btn-join">JOIN KASCOTE</button>
+        
+        <!-- This block will be shown when the user is logged in -->
+        <div id="userProfile" style="display: none; align-items: center; gap: 1rem;">
+          <img id="userPhoto" src="" alt="User Photo" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+          <span id="userName" style="color: var(--kascoten-green); font-weight: bold;"></span>
+          <button id="logoutBtn" class="btn-join">Logout</button>
+        </div>
       </div>
 
       
@@ -56,7 +66,8 @@
     <!-- Mobile Overlay Menu -->
     <div class="overlay-menu" id="overlayMenu">
       <div class="overlay-header">
-        <img src="https://res.cloudinary.com/dfvumcrsy/image/upload/v1753020566/kascote_white_bg_logo_qchqim.png" alt="KASCOTEN Logo">
+        <!-- <img src="https://res.cloudinary.com/dfvumcrsy/image/upload/v1753020566/kascote_white_bg_logo_qchqim.png" alt="KASCOTE Logo"> -->
+                <img src="kascote logo.png" alt="kascote-logo">
         <button class="icon-btn close-btn" id="closeMenu" aria-label="Close">
           <svg width="24" height="24" fill="none" stroke="#06402b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -79,6 +90,7 @@
   <section class="hero-carousel">
     <div class="slides" id="slides">
 
+      
 
 
 
@@ -95,6 +107,17 @@
 
 
 
+<div class="slide" id="slide-newyear">
+        <div class="hero-left">
+          <div class="hero-left-content">
+            <h1>HAPPY NEW YEAR 2026</h1>
+            <p>Wishing renewed opportunities, deeper partnerships, and shared prosperity with KASCOTE.</p>
+          </div>
+        </div>
+        <div class="hero-right">
+          <img src="KASCOTEN IMAGES/year-2026-new-yaer-flyer.jpeg" alt="Happy New Year 2026 - KASCOTE">
+        </div>
+      </div>
 
 
 
@@ -103,7 +126,7 @@
           <div class="hero-left-content"> 
             <h2>SOMMET DE L'ELEVAGE EVENT</h2>
            <p>
-    In October 2025 KASCOTEN attended Sommet de l'élevage — the world’s No.1 sustainable livestock and agricultural show in France under the leadership of Dr Idi Mukhtar Maiha — the honourable minister of livestock development Nigeria, which drew over 120,000 visitors from 90 countries. We registered the highest participation from Kano, showcasing local livestock, technologies and forging international partnerships that create new export, training and market opportunities for our members.
+    In October 2025 KASCOTE attended Sommet de l'élevage — the world’s No.1 sustainable livestock and agricultural show in France under the leadership of Dr Idi Mukhtar Maiha — the honourable minister of livestock development Nigeria, which drew over 120,000 visitors from 90 countries. We registered the highest participation from Kano, showcasing local livestock, technologies and forging international partnerships that create new export, training and market opportunities for our members.
            </p>
             <a href="#" class="hero-btn">Learn About Our visitation</a>
           </div>
@@ -120,7 +143,7 @@
           <div class="hero-left-content">
             <h2>Strengthening Indonesia Trade Ties</h2>
            <p>
-KASCOTEN/KASCOTE proudly represented Nigeria at the prestigious 40th Indonesian Trade Expo 2025, where Chairman and President Alhaji Hassan Yaro stood shoulder to shoulder with the statue of the President Prabowo Subianto of Indonesia during the grand opening ceremony.           </p>
+KASCOTE proudly represented Nigeria at the prestigious 40th Indonesian Trade Expo 2025, where Chairman and President Alhaji Hassan Yaro stood shoulder to shoulder with the statue of the President Prabowo Subianto of Indonesia during the grand opening ceremony.           </p>
             <a href="#" class="hero-btn">Learn About Our visitation</a>
           </div>
         </div>
@@ -150,9 +173,9 @@ At a landmark moment during the Indonesian KASCOTE visit 2025, the Komunitas Pen
           <div class="hero-left-content">
             <h1>🇳🇬🇮🇩 Strengthening Diplomatic Ties Abroad</h1>
            <p>
-KASCOTEN Delegation Visits Nigerian Embassy in Indonesia. <br>
+KASCOTE Delegation Visits Nigerian Embassy in Indonesia. <br>
 
-As part of their official trade mission to Jakarta, Indonesia, the leadership and members of KASCOTEN/KASCOTE paid a courtesy visit to the Embassy of the Federal Republic of Nigeria in Indonesia—a moment of pride and diplomacy for Kano’s entrepreneurial community.           </p>
+As part of their official trade mission to Jakarta, Indonesia, the leadership and members of KASCOTE paid a courtesy visit to the Embassy of the Federal Republic of Nigeria in Indonesia—a moment of pride and diplomacy for Kano’s entrepreneurial community.           </p>
             <a href="#" class="hero-btn">Learn About Our visitation</a>
           </div>
         </div>
@@ -247,7 +270,7 @@ In preparation of our participation in International Agricultural Show in France
   <div class="hero-left">
     <div class="hero-left-content">
       <h1>Strengthening Ties with Bangladesh for Mutual Growth</h1>
-     <p>KASCOTEN and KASCOTE held a strategic business meeting with Masudur Rahman, the Ambassador of Bangladesh to Nigeria, to discuss trade and investment collaborations, and ways to deepen economic partnerships between our members and Bangladesh Business Community.</p>
+     <p>KASCOTE held a strategic business meeting with Masudur Rahman, the Ambassador of Bangladesh to Nigeria, to discuss trade and investment collaborations, and ways to deepen economic partnerships between our members and Bangladesh Business Community.</p>
       <a href="#" class="hero-btn">Explore Our B2B meetings</a>
     </div>
   </div>
@@ -319,10 +342,10 @@ In preparation of our participation in International Agricultural Show in France
       <div class="slide" id="slide-1">
         <div class="hero-left">
           <div class="hero-left-content">
-          <p>Kano Small and Medium Scale Traders, Farmers and Entrepreneurs Development Association (KASCOTEN) is sister  partner with Kano Council Of  Traders and Entrepreneurs (KASCOTE) </p>  
-          <p> The Aims and Objectives of KASCOTE and KASCOTEN include developing sectors like commerce, small and medium enterprises, agricultural sector as well as promoting their skills and entrepreneurial activities in Kano and Nigeria at large.
+          <h2>Kano Council Of  Traders and Entrepreneurs (KASCOTE)</h2>  
+          <p> The Aims and Objectives of KASCOTE include developing sectors like commerce, small and medium enterprises, agricultural sector as well as promoting their skills and entrepreneurial activities in Kano and Nigeria at large.
 
- KASCOTE and KASCOTEN undertake various activities, including local and international exhibition and promoting their members' products, as well as organizing workshops, online programmes, E-commerce, trade missions, committee interaction etc.
+KASCOTE undertake various activities, including local and international exhibition and promoting their members' products, as well as organizing workshops, online programmes, E-commerce, trade missions, committee interaction etc.
 </p>
           <a href="#" class="hero-btn">Find Out More</a>
           </div>
@@ -375,7 +398,7 @@ In preparation of our participation in International Agricultural Show in France
         <div class="hero-left">
           <div class="hero-left-content">
           <h1>Kano Businesses on the Global Stage;<br>Tunisia Africa Business Meeting 2025</h1>
-          <p>KASCOTEN and KASCOTE proudly represented Kano’s vibrant trade community at the Tunisia Africa Business Meeting, forging partnerships, exploring investment opportunities, and showcasing the strength of our traders and entrepreneurs to international markets.</p>
+          <p>KASCOTE proudly represented Kano’s vibrant trade community at the Tunisia Africa Business Meeting, forging partnerships, exploring investment opportunities, and showcasing the strength of our traders and entrepreneurs to international markets.</p>
           <a href="#" class="hero-btn">Discover Our Trade Missions</a>
           </div>
         </div>
@@ -401,7 +424,7 @@ In preparation of our participation in International Agricultural Show in France
         <div class="hero-left">
           <div class="hero-left-content">
           <h1>Amplifying Kano’s Business Voice on Ammasco Radio.</h1>
-          <p>During our visitation to Ammasco Radio, KASCOTEN and KASCOTE leaders discussed key initiatives, business challenges, and opportunities shaping Kano’s trade and entrepreneurial ecosystem.We believe in sharing knowledge, fostering dialogue, and keeping our members informed and inspired.</p>
+          <p>During our visitation to Ammasco Radio,KASCOTE leaders discussed key initiatives, business challenges, and opportunities shaping Kano’s trade and entrepreneurial ecosystem.We believe in sharing knowledge, fostering dialogue, and keeping our members informed and inspired.</p>
             <a href="#" class="hero-btn">Discover Our Visitations</a>
           </div>
         </div>
@@ -414,7 +437,7 @@ In preparation of our participation in International Agricultural Show in France
         <div class="hero-left">
           <div class="hero-left-content">
           <h1>Opening Doors to Global Trade Opportunities</h1>
-          <p>KASCOTEN and KASCOTE proudly hosted the Kano-Indonesian Expo 2024, showcasing high-quality Indonesian products alongside Kano’s vibrant local industries. The event created a powerful platform for cross-border collaboration, trade discussions, and cultural exchange.</p>
+          <p>KASCOTE proudly hosted the Kano-Indonesian Expo 2024, showcasing high-quality Indonesian products alongside Kano’s vibrant local industries. The event created a powerful platform for cross-border collaboration, trade discussions, and cultural exchange.</p>
           <a href="#" class="hero-btn">Discover Our Exhibitions</a>
           </div>
         </div>
@@ -427,7 +450,7 @@ In preparation of our participation in International Agricultural Show in France
         <div class="hero-left">
           <div class="hero-left-content">
           <h1>Strengthening Trade Ties at Kano Free Trade Zone.</h1>
-          <p>KASCOTEN and KASCOTE, alongside the Indonesian Ambassador and trade delegations, visited the Kano Free Trade Zone to explore new investment opportunities, trade partnerships, and strategies for economic growth. This collaboration highlights our mission to connect Kano’s businesses with global markets.</p>
+          <p>KASCOTE alongside the Indonesian Ambassador and trade delegations, visited the Kano Free Trade Zone to explore new investment opportunities, trade partnerships, and strategies for economic growth. This collaboration highlights our mission to connect Kano’s businesses with global markets.</p>
           <a href="#" class="hero-btn">Discover Our Trade Partnerships</a>
           </div>
         </div>
@@ -491,7 +514,7 @@ In preparation of our participation in International Agricultural Show in France
           <span>Visitations</span>
         </li>
         <li data-target="policy">
-          <span>About KASCOTEN & KASCOTE</span>
+          <span>About KASCOTE</span>
         </li>
       </ul>
     </div>
@@ -502,7 +525,7 @@ In preparation of our participation in International Agricultural Show in France
       <div class="content-panel active" id="member">
         <h3>Become a Member</h3>
         <p>
-          Joining KASCOTEN gives your entire company access to a range of exclusive business services,
+          Joining KASCOTE gives your entire company access to a range of exclusive business services,
           from networking events to bespoke advice and workspaces. Whether you’re looking for
           profile-building opportunities or want to enjoy discounts on products like trade documents,
           there are plenty of reasons to join our network and see your business grow.
@@ -514,7 +537,7 @@ In preparation of our participation in International Agricultural Show in France
       <div class="content-panel" id="events">
         <h3> B2B Networking</h3>
         <p>
-          Engage with other entrepreneurs and traders through KASCOTEN and KASCOTE's events and networking sessions.
+          Engage with other entrepreneurs and traders through KASCOTE's events and networking sessions.
           We provide opportunities for traders, farmers, and entrepreneurs to collaborate, exchange ideas, and grow their business connections
 with local and international partners through structured networking sessions, trade forums, and matchmaking opportunities. 
         </p>
@@ -525,7 +548,7 @@ with local and international partners through structured networking sessions, tr
       <div class="content-panel" id="membership">
         <h3>Membership Benefits</h3>
         <p>
-         KASCOTE  & KASCOTEN often rendered its helping hands and services to the members, some of which include:<br> <br>
+         KASCOTE  often rendered its helping hands and services to the members, some of which include:<br> <br>
 *Creating enabling business environment solely to boost small and medium scales enterprise (MSMEs); and<br>
 *Promoting their finished products and skills<br>
 *Strengthening private sector growth for Nigeria's sustainable economic development<br>
@@ -539,7 +562,7 @@ with local and international partners through structured networking sessions, tr
       <div class="content-panel" id="sponsorship">
         <h3>Sponsorship Benefits</h3>
         <p>
-         Sponsoring KASCOTEN events or programs means visibility, networking, and influence. We offer sponsorship packages that help businesses reach targeted audiences while supporting entrepreneurship development.
+         Sponsoring KASCOTE events or programs means visibility, networking, and influence. We offer sponsorship packages that help businesses reach targeted audiences while supporting entrepreneurship development.
         </p>
         <a href="#" class="learn-more">Learn more <span class="arrow">→</span></a>
       </div>
@@ -558,7 +581,7 @@ with local and international partners through structured networking sessions, tr
         <h3>Partnership Opportunities</h3>
         <p>
           Discover collaboration opportunities with other traders, entrepreneurs, and organizations.
-          KASCOTEN fosters partnerships that enable business growth and innovation.
+          KASCOTE fosters partnerships that enable business growth and innovation.
         </p>
         <a href="#" class="learn-more">Learn more <span class="arrow">→</span></a>
       </div>
@@ -585,7 +608,7 @@ with local and international partners through structured networking sessions, tr
       <div class="content-panel" id="conferences">
         <h3>Speeches, Conferences, Seminars & Workshops</h3>
         <p>
-          KASCOTEN & KASCOTE host and participate in impactful knowledge-sharing and training events aimed at equipping traders and entrepreneurs with tools for success in today’s competitive market. 
+          KASCOTE host and participate in impactful knowledge-sharing and training events aimed at equipping traders and entrepreneurs with tools for success in today’s competitive market. 
         </p>
         <a href="#" class="learn-more">Learn more <span class="arrow">→</span></a>
       </div>
@@ -594,7 +617,7 @@ with local and international partners through structured networking sessions, tr
       <div class="content-panel" id="visitations">
         <h3>Visitations</h3>
         <p>
-          Engage with other entrepreneurs and stakeholders and partners through KASCOTEN's visitations.
+          Engage with other entrepreneurs and stakeholders and partners through KASCOTE's visitations.
           We organize local and international visits to foster business relations, trade exploration, and capacity-building initiatives.
         </p>
         <a href="Visitations.html" class="learn-more">Learn more <span class="arrow">→</span></a>
@@ -603,16 +626,35 @@ with local and international partners through structured networking sessions, tr
       
       <!-- Policy & Campaigning -->
       <div class="content-panel" id="policy">
-        <h3>About KASCOTEN & KASCOTE</h3>
+        <h3>About KASCOTE</h3>
         <p>
-          KASCOTEN advocates for traders and entrepreneurs by influencing policies that affect local
+          KASCOTE advocates for traders and entrepreneurs by influencing policies that affect local
           and international commerce. We campaign for fair regulations and improved business conditions
           to benefit our members.
         </p>
-        <a href="About.html" class="learn-more">About KASCOTEN & KASCOTE <span class="arrow">→</span></a>
+        <a href="About.html" class="learn-more">About KASCOTE <span class="arrow">→</span></a>
       </div>
       
       
+    </div>
+  </div>
+</section>
+
+<!-- Recent News & Insights Section -->
+<section class="recent-news-section">
+  <div class="recent-news-container">
+    <div class="recent-news-header">
+      <h2>Recent News & Insights</h2>
+      <p>Stay updated with the latest developments and stories from KASCOTE</p>
+    </div>
+    <div class="recent-news-grid" id="recentNewsGrid">
+      <div class="loading-spinner">
+        <i class="fas fa-spinner fa-spin"></i>
+        <p>Loading articles...</p>
+      </div>
+    </div>
+    <div class="view-all-news">
+      <a href="news.html" class="view-all-btn">View All Articles <i class="fas fa-arrow-right"></i></a>
     </div>
   </div>
 </section>
@@ -676,7 +718,7 @@ with local and international partners through structured networking sessions, tr
   <div class="footer-container">
     <!-- Logo and Description -->
     <div class="footer-logo">
-      <h2>KASCOTEN & KASCOTE</h2>
+      <h2>KASCOTE</h2>
       <p>
         Empowering Kano’s traders, farmers, and entrepreneurs through 
         partnerships, exhibitions, trade missions, and policy advocacy.
@@ -700,7 +742,7 @@ with local and international partners through structured networking sessions, tr
       <h4>Membership & Benefits</h4>
       <ul>
         <li><a href="#">Membership Overview</a></li>
-        <li><a href="#">Join KASCOTEN</a></li>
+        <li><a href="#">Join KASCOTE</a></li>
         <li><a href="#">B2B Networking</a></li>
         <li><a href="#">Sponsorship Benefits</a></li>
         <li><a href="#">Partnership Opportunities</a></li>
@@ -732,6 +774,37 @@ with local and international partners through structured networking sessions, tr
   
   
 
+  <!-- Firebase Setup -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect, getRedirectResult, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+    import { getFirestore, doc, setDoc, getDoc, serverTimestamp, collection, addDoc, query, orderBy, onSnapshot, deleteDoc, getDocs, where } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCaNUTiyitKI-4rvjI6NC60RmxcEJA9OCk",
+      authDomain: "kascoten1.firebaseapp.com",
+      projectId: "kascoten1",
+      storageBucket: "kascoten1.firebasestorage.app",
+      messagingSenderId: "848423451775",
+      appId: "1:848423451775:web:d8cd4f7612fc405269534a",
+      measurementId: "G-JVD65Q1F3J"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+    const provider = new GoogleAuthProvider();
+
+    // Make these globally accessible for homepage-news.js
+    window.auth = auth;
+    window.db = db;
+    window.provider = provider;
+    window.firebase = {
+      collection, addDoc, getDocs, query, where, orderBy, serverTimestamp, 
+      onSnapshot, doc, setDoc, getDoc, deleteDoc, signOut, onAuthStateChanged, getRedirectResult, signInWithPopup, limit: (n) => n
+    };
+  </script>
+
   <script type="module" src="src/script.js"></script>
-</body>
+  <script type="module" src="src/homepage-news.js"></script>
 </html>

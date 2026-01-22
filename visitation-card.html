@@ -1,0 +1,42 @@
+<!-- Visitation Card -->
+<div class="visitation-card" data-post-id="post-1">
+  <img src="..." alt="...">
+  
+  <div class="visitation-content">
+    <span class="date">...</span>
+    <h3>...</h3>
+    <p>...</p>
+    <a href="..." class="view-more glightbox">View More →</a>
+    <!-- More gallery links... -->
+  </div>
+
+  <!-- Engagement bar INSIDE card, pushed to bottom -->
+  <div class="post-engagement">
+    <button class="engagement-btn like-btn" data-post-id="post-1" aria-label="Like">
+      <i class="fas fa-thumbs-up"></i>
+    </button>
+    <button class="engagement-btn comment-btn" data-post-id="post-1" aria-label="Comment">
+      <i class="fas fa-comment"></i>
+    </button>
+    <button class="engagement-btn share-btn" data-post-id="post-1" aria-label="Share">
+      <i class="fas fa-share"></i>
+    </button>
+  </div>
+</div>
+
+<!-- Comments Modal - OUTSIDE the card -->
+<div class="modal comments-modal" id="commentsModal-post-1">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>Comments</h3>
+      <button class="modal-close">&times;</button>
+    </div>
+    <div class="comments-list" id="commentsList-post-1">
+      <!-- Comments loaded from Firebase by loadCommentsForPost() -->
+    </div>
+    <div class="add-comment">
+      <input type="text" placeholder="Write a comment..." class="comment-input" data-post-id="post-1">
+      <button class="submit-comment" data-post-id="post-1">Post</button>
+    </div>
+  </div>
+</div>

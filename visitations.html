@@ -13,7 +13,7 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@700&family=Alegreya:wght@400;500&display=swap" rel="stylesheet" />
   
-  <script src="https://kit.fontawesome.com/YOUR_KIT_ID.js" crossorigin="anonymous"></script> 
+  <script src="https://kit.fontawesome.com/5da3338349.js" crossorigin="anonymous"></script>
 
   <!-- CSS -->
   <link rel="stylesheet" href="src/style.css" />
@@ -40,8 +40,15 @@
   <a href="contact.html">Contact Us</a>
 </nav>
       <div class="cta-buttons">
-      <button class="btn-join">JOIN KASCOTEN</button>
-    </div>
+        <button id="loginBtn" class="btn-join">JOIN KASCOTEN</button>
+        
+        <!-- This block will be shown when the user is logged in -->
+        <div id="userProfile" style="display: none; align-items: center; gap: 1rem;">
+          <img id="userPhoto" src="" alt="User Photo" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+          <span id="userName" style="color: var(--kascoten-green); font-weight: bold;"></span>
+          <button id="logoutBtn" class="btn-join">Logout</button>
+        </div>
+      </div>
 
       
       
@@ -114,7 +121,7 @@
 
       <div class="visitations-grid">
 
-        <div class="visitation-card">
+        <div class="visitation-card" data-post-id="visit-kano-free-trade-zone">
           <img src="KASCOTEN IMAGES/kano-free-tade-zone24/kano-free-tade-zone24-1.jpg" alt="Kano Free Trade Zone Visit">
           <div class="visitation-content">
             <span class="date">15 JUL 2025</span>
@@ -130,10 +137,23 @@
             <a href="KASCOTEN IMAGES/kano-free-tade-zone24/kano-free-tade-zone24-5.jpg" class="glightbox" data-gallery="visit1"></a>
             <a href="KASCOTEN IMAGES/kano-free-tade-zone24/kano-free-tade-zone24-6.jpg" class="glightbox" data-gallery="visit1"></a>
             <a href="KASCOTEN IMAGES/kano-free-tade-zone24/kano-free-tade-zone24-8.mp4" class="glightbox" data-gallery="visit1"></a>
+            
+            <!-- Like and Comment Section -->
+            <div class="post-engagement">
+              <button class="engagement-btn like-btn" data-post-id="post-1" aria-label="Like">
+                <i class="fas fa-thumbs-up"></i>
+              </button>
+              <button class="engagement-btn comment-btn" data-post-id="post-1" aria-label="Comment">
+                <i class="fas fa-comment"></i>
+              </button>
+              <button class="engagement-btn share-btn" data-post-id="post-1" aria-label="Share">
+                <i class="fas fa-share"></i>
+              </button>
+            </div>
           </div>
         </div>
 
-        <div class="visitation-card">
+        <div class="visitation-card" data-post-id="visit-ceo-asia-group">
           <img src="KASCOTEN IMAGES/visitations/visitation-to-3.jpg" alt="Bangladesh Ambassador Meeting">
           <div class="visitation-content">
             <span class="date">5 JUL 2025</span>
@@ -144,10 +164,43 @@
             <a href="KASCOTEN IMAGES/visitations/visitation-to-1.jpg" class="view-more glightbox" data-gallery="visit2">View More →</a>
             <a href="KASCOTEN IMAGES/visitations/visitation-to-2.jpg" class="glightbox" data-gallery="visit2"></a>
             <a href="KASCOTEN IMAGES/visitations/visitation-to-4.jpg" class="glightbox" data-gallery="visit2"></a>
+            
+            <!-- Like and Comment Section -->
+            <div class="post-engagement">
+              <button class="engagement-btn like-btn" data-post-id="post-2">
+                <i class="fas fa-thumbs-up"></i>
+                <span>Like</span>
+              </button>
+              <button class="engagement-btn comment-btn" data-post-id="post-2">
+                <i class="fas fa-comment"></i>
+                <span>Comment</span>
+              </button>
+              <button class="engagement-btn share-btn" data-post-id="post-2">
+                <i class="fas fa-share"></i>
+                <span>Share</span>
+              </button>
+            </div>
+
+            <!-- Comments Modal -->
+            <div class="modal comments-modal" id="commentsModal-post-2">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3>Comments</h3>
+                  <button class="modal-close">&times;</button>
+                </div>
+                <div class="comments-list" id="commentsList-post-2">
+                  <!-- Comments will be populated here by JS -->
+                </div>
+                <div class="add-comment">
+                  <input type="text" placeholder="Write a comment..." class="comment-input" data-post-id="post-2">
+                  <button class="submit-comment" data-post-id="post-2">Post</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="visitation-card">
+        <div class="visitation-card" data-post-id="visit-jalla-radio">
           <img src="KASCOTEN IMAGES/jall-radio-24-visit/jall-radio-24-visit-4.jpg" alt="IFSA 2024 Participation">
           <div class="visitation-content">
             <span class="date">10 JUN 2025</span>
@@ -160,10 +213,43 @@
             <a href="KASCOTEN IMAGES/jall-radio-24-visit/jall-radio-24-visit-2.jpg" class="glightbox" data-gallery="visit3"></a>
             <a href="KASCOTEN IMAGES/jall-radio-24-visit/jall-radio-24-visit-3.jpg" class="glightbox" data-gallery="visit3"></a>
             <a href="KASCOTEN IMAGES/jall-radio-24-visit/jall-radio-24-visit-4.jpg" class="glightbox" data-gallery="visit3"></a>
+            
+            <!-- Like and Comment Section -->
+            <div class="post-engagement">
+              <button class="engagement-btn like-btn" data-post-id="post-3">
+                <i class="fas fa-thumbs-up"></i>
+                <span>Like</span>
+              </button>
+              <button class="engagement-btn comment-btn" data-post-id="post-3">
+                <i class="fas fa-comment"></i>
+                <span>Comment</span>
+              </button>
+              <button class="engagement-btn share-btn" data-post-id="post-3">
+                <i class="fas fa-share"></i>
+                <span>Share</span>
+              </button>
+            </div>
+
+            <!-- Comments Modal -->
+            <div class="modal comments-modal" id="commentsModal-post-3">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3>Comments</h3>
+                  <button class="modal-close">&times;</button>
+                </div>
+                <div class="comments-list" id="commentsList-post-3">
+                  <!-- Comments will be populated here by JS -->
+                </div>
+                <div class="add-comment">
+                  <input type="text" placeholder="Write a comment..." class="comment-input" data-post-id="post-3">
+                  <button class="submit-comment" data-post-id="post-3">Post</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="visitation-card">
+        <div class="visitation-card" data-post-id="visit-ammasco-radio">
           <img src="KASCOTEN IMAGES/ammsaco-radio-visit/ammsaco-radio-visit-1.jpg" alt="Ammasco Radio Visit">
           <div class="visitation-content">
             <span class="date">20 MAY 2025</span>
@@ -174,12 +260,44 @@
             </p>
             <a href="KASCOTEN IMAGES/ammsaco-radio-visit/ammsaco-radio-visit-1.jpg" class="view-more glightbox" data-gallery="visit4">View More →</a>
             <a href="KASCOTEN IMAGES/ammsaco-radio-visit/ammsaco-radio-visit-2.jpg" class="glightbox" data-gallery="visit4"></a>
+            
+            <!-- Like and Comment Section -->
+            <div class="post-engagement">
+              <button class="engagement-btn like-btn" data-post-id="post-4">
+                <i class="fas fa-thumbs-up"></i>
+                <span>Like</span>
+              </button>
+              <button class="engagement-btn comment-btn" data-post-id="post-4">
+                <i class="fas fa-comment"></i>
+                <span>Comment</span>
+              </button>
+              <button class="engagement-btn share-btn" data-post-id="post-4">
+                <i class="fas fa-share"></i>
+                <span>Share</span>
+              </button>
+            </div>
+
+            <!-- Comments Modal -->
+            <div class="modal comments-modal" id="commentsModal-post-4">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3>Comments</h3>
+                  <button class="modal-close">&times;</button>
+                </div>
+                <div class="comments-list" id="commentsList-post-4">
+                  <!-- Comments will be populated here by JS -->
+                </div>
+                <div class="add-comment">
+                  <input type="text" placeholder="Write a comment..." class="comment-input" data-post-id="post-4">
+                  <button class="submit-comment" data-post-id="post-4">Post</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
 
-
-         <div class="visitation-card">
+         <div class="visitation-card" data-post-id="visit-indonesian-ambassador">
           <img src="KASCOTEN IMAGES/visitations/indonesian-ambassador-visit-1.jpg" alt="Visitation to Indonesian ambassador">
           <div class="visitation-content">
             <span class="date">10 JUN 2025</span>
@@ -190,11 +308,44 @@
             <a href="KASCOTEN IMAGES/visitations/indonesian-ambassador-visit-1.jpg" class="view-more glightbox" data-gallery="visit5">View More →</a>
             <a href="KASCOTEN IMAGES/visitations/indonesian-ambassador-visit-2.jpg" class="glightbox" data-gallery="visit5"></a>
             <a href="KASCOTEN IMAGES/visitations/indonesian-ambassador-visit-3.jpg" class="glightbox" data-gallery="visit5"></a>
+            
+            <!-- Like and Comment Section -->
+            <div class="post-engagement">
+              <button class="engagement-btn like-btn" data-post-id="post-5">
+                <i class="fas fa-thumbs-up"></i>
+                <span>Like</span>
+              </button>
+              <button class="engagement-btn comment-btn" data-post-id="post-5">
+                <i class="fas fa-comment"></i>
+                <span>Comment</span>
+              </button>
+              <button class="engagement-btn share-btn" data-post-id="post-5">
+                <i class="fas fa-share"></i>
+                <span>Share</span>
+              </button>
+            </div>
+
+            <!-- Comments Modal -->
+            <div class="modal comments-modal" id="commentsModal-post-5">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3>Comments</h3>
+                  <button class="modal-close">&times;</button>
+                </div>
+                <div class="comments-list" id="commentsList-post-5">
+                  <!-- Comments will be populated here by JS -->
+                </div>
+                <div class="add-comment">
+                  <input type="text" placeholder="Write a comment..." class="comment-input" data-post-id="post-5">
+                  <button class="submit-comment" data-post-id="post-5">Post</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
 
-        <div class="visitation-card">
+        <div class="visitation-card" data-post-id="visit-tunisian-ambassador">
           <img src="KASCOTEN IMAGES/visitations/tunisian-ambassador-visit-template.png" alt="tunisian-ambassador-visit">
           <div class="visitation-content">
             <span class="date">10 JUN 2025</span>
@@ -202,11 +353,34 @@
             <p>During our visit with His Excellency Mohsen Antit, Ambassador of Tunisia, we reaffirmed our commitment to creating strong bilateral relationships and explored potential collaborations in key sectors.</p>
             <a href="KASCOTEN IMAGES/visitations/tunisian-ambassador-visit.jpg" class="view-more glightbox" data-gallery="visit6">View More →</a>
             
+            <!-- Like and Comment Section -->
+            <div class="post-engagement">
+              <button class="engagement-btn like-btn" data-post-id="post-6">
+                <i class="fas fa-thumbs-up"></i>
+                <span>Like</span>
+              </button>
+              <button class="engagement-btn comment-btn" data-post-id="post-6">
+                <i class="fas fa-comment"></i>
+                <span>Comment</span>
+              </button>
+              <button class="engagement-btn share-btn" data-post-id="post-6">
+                <i class="fas fa-share"></i>
+                <span>Share</span>
+              </button>
+            </div>
+            <!-- Accordion Panel for Comments (hidden by default) -->
+            <div class="comment-accordion-panel">
+              <div class="comments-list"></div>
+              <form class="comment-form">
+                <input type="text" placeholder="Add a comment..." required>
+                <button type="submit"><i class="fas fa-paper-plane"></i></button>
+              </form>
+            </div>
           </div>
         </div>
 
 
-        <div class="visitation-card">
+        <div class="visitation-card" data-post-id="visit-muslad-turkey">
           <img src="KASCOTEN IMAGES/visitations/turkish-business-community-president-visit-template.png" alt="turkish-business-community-president-visit">
           <div class="visitation-content">
             <span class="date">10 JUN 2025</span>
@@ -214,11 +388,34 @@
             <p>We were honored to visit the president of MÜSİAD (Independent Industrialists and Businessmen's Association) Nigeria of Turkey Mr Tevfik Demirel in their headquarters in Kano.</p>
             <a href="KASCOTEN IMAGES/visitations/turkish-business-community-president-visit.jpg" class="view-more glightbox" data-gallery="visit7">View More →</a>
             
+            <!-- Like and Comment Section -->
+            <div class="post-engagement">
+              <button class="engagement-btn like-btn" data-post-id="post-7">
+                <i class="fas fa-thumbs-up"></i>
+                <span>Like</span>
+              </button>
+              <button class="engagement-btn comment-btn" data-post-id="post-7">
+                <i class="fas fa-comment"></i>
+                <span>Comment</span>
+              </button>
+              <button class="engagement-btn share-btn" data-post-id="post-7">
+                <i class="fas fa-share"></i>
+                <span>Share</span>
+              </button>
+            </div>
+            <!-- Accordion Panel for Comments (hidden by default) -->
+            <div class="comment-accordion-panel">
+              <div class="comments-list"></div>
+              <form class="comment-form">
+                <input type="text" placeholder="Add a comment..." required>
+                <button type="submit"><i class="fas fa-paper-plane"></i></button>
+              </form>
+            </div>
           </div>
         </div>
 
 
-         <div class="visitation-card">
+         <div class="visitation-card" data-post-id="visit-pakistan-ambassador">
           <img src="KASCOTEN IMAGES/visitations/pakistan-ambassador-visit.jpg" alt="turkish-business-community-president-visit">
           <div class="visitation-content">
             <span class="date">10 JUN 2025</span>
@@ -226,6 +423,29 @@
             <p>A delegation met with His Excellency Major General (Retd) Sohail Ahmad Khan, the High Commissioner of Pakistan, to discuss strengthening diplomatic relations and exploring new avenues for bilateral trade.</p>
             <a href="KASCOTEN IMAGES/visitations/pakistan-ambassador-visit.jpg" class="view-more glightbox" data-gallery="visit8">View More →</a>
             
+            <!-- Like and Comment Section -->
+            <div class="post-engagement">
+              <button class="engagement-btn like-btn" data-post-id="post-8">
+                <i class="fas fa-thumbs-up"></i>
+                <span>Like</span>
+              </button>
+              <button class="engagement-btn comment-btn" data-post-id="post-8">
+                <i class="fas fa-comment"></i>
+                <span>Comment</span>
+              </button>
+              <button class="engagement-btn share-btn" data-post-id="post-8">
+                <i class="fas fa-share"></i>
+                <span>Share</span>
+              </button>
+            </div>
+            <!-- Accordion Panel for Comments (hidden by default) -->
+            <div class="comment-accordion-panel">
+              <div class="comments-list"></div>
+              <form class="comment-form">
+                <input type="text" placeholder="Add a comment..." required>
+                <button type="submit"><i class="fas fa-paper-plane"></i></button>
+              </form>
+            </div>
           </div>
         </div>
 
@@ -310,37 +530,86 @@
 
 
   <script type="module" src="src/script.js"></script>
-   <script>
-   
-    document.addEventListener("DOMContentLoaded", () => {
-      GLightbox({
-        selector: '.glightbox'
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Initialize GLightbox only once
+      const lightbox = GLightbox({
+        selector: '.glightbox',
+        loop: true,
+        touchNavigation: true,
+        keyboardNavigation: true,
+      });
+ 
+      // Add a counter dynamically
+      lightbox.on('slide_changed', ({ current }) => {
+        const counter = document.querySelector('.glightbox-counter') || document.createElement('div');
+        counter.className = 'glightbox-counter';
+        document.querySelector('.gcontainer').appendChild(counter);
+        counter.textContent = `${current.index + 1} / ${lightbox.elements.length}`;
+      });
+    });
+  </script>
+
+  <script>
+    // Auto-fix button post-ids to match card post-ids
+    document.querySelectorAll('[data-post-id]').forEach(card => {
+      const postId = card.getAttribute('data-post-id');
+      const buttons = card.querySelectorAll('[class*="btn"]');
+      buttons.forEach(btn => {
+        btn.setAttribute('data-post-id', postId);
       });
     });
 
-    /* GLightBox */
+    // Create modals dynamically for each card
+    document.querySelectorAll('[data-post-id]').forEach(card => {
+      const postId = card.getAttribute('data-post-id');
+      const modal = document.createElement('div');
+      modal.className = 'modal comments-modal';
+      modal.id = `commentsModal-${postId}`;
+      modal.innerHTML = `
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Comments</h3>
+            <button class="modal-close">&times;</button>
+          </div>
+          <div class="comments-list" id="commentsList-${postId}">
+            <!-- Comments loaded from Firebase -->
+          </div>
+          <div class="add-comment">
+            <input type="text" placeholder="Write a comment..." class="comment-input" data-post-id="${postId}">
+            <button class="submit-comment" data-post-id="${postId}">Post</button>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+    });
 
-const lightbox = GLightbox({
-  selector: '.glightbox',
-  loop: true,
-  touchNavigation: true,
-  keyboardNavigation: true,
-});
+    // Open comment modal AND LOAD COMMENTS
+    document.querySelectorAll('.comment-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const postId = this.dataset.postId;
+        const modal = document.getElementById(`commentsModal-${postId}`);
+        const commentsList = document.getElementById(`commentsList-${postId}`);
+        
+        if (modal && commentsList) {
+          // Load comments from Firebase before showing modal
+          loadCommentsForPost(postId, commentsList);
+          modal.classList.add('active');
+        }
+      });
+    });
 
-// Add a counter dynamically
-lightbox.on('slide_changed', ({ current, prev }) => {
-  const totalSlides = lightbox.elements.length;
-  let counter = document.querySelector('.glightbox-counter');
+    // Close modal
+    document.addEventListener('click', function(e) {
+      if (e.target.classList.contains('modal-close')) {
+        e.target.closest('.modal').classList.remove('active');
+      }
+      if (e.target.classList.contains('modal')) {
+        e.target.classList.remove('active');
+      }
+    });
+  </script>
 
-  if (!counter) {
-    counter = document.createElement('div');
-    counter.className = 'glightbox-counter';
-    document.querySelector('.gcontainer').appendChild(counter);
-  }
-
-  counter.textContent = `${current.index + 1} / ${totalSlides}`;
-});
-
-    </script>
 </body>
 </html>

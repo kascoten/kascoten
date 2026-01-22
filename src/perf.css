@@ -1,0 +1,87 @@
+/* Performance Optimizations - Critical Rendering Path */
+
+/* Prevent layout shift on page load */
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Images: Use aspect-ratio to prevent layout shift */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Lazy loading images should have min-height to prevent layout shift */
+.card-image img,
+.recent-news-card-image img,
+.featured-image img {
+  min-height: 200px;
+  background-color: #f0f0f0;
+}
+
+/* Prevent jank during filter/search operations */
+.news-card,
+.recent-news-card {
+  will-change: opacity;
+}
+
+/* Optimize scrolling performance */
+.news-grid,
+.recent-news-grid {
+  contain: layout style paint;
+}
+
+/* Fast animations with GPU acceleration */
+.card-image img,
+.news-card {
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Loading spinner optimization */
+.loading-spinner {
+  contain: strict;
+}
+
+/* Reduce repaints on filter buttons */
+.filter-btn {
+  will-change: background-color;
+}
+
+/* Modal animation optimization */
+.modal.active {
+  contain: layout style;
+}
+
+/* Comments section optimization */
+.comment-item {
+  contain: layout style;
+}
+
+/* Post detail page optimization */
+.post-detail-container {
+  contain: layout;
+}
+
+/* Prevent layout thrashing */
+.article-meta,
+.card-actions {
+  will-change: auto;
+}
+
+/* Image grid optimization */
+.image-gallery {
+  contain: layout style paint;
+}
+
+/* Optimize lightbox */
+.lightbox-overlay {
+  contain: layout style paint;
+  will-change: opacity;
+}

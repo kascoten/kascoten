@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin-allow-popups" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>News & Insights - KASCOTE</title>
+  <title>Article - KASCOTE</title>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@700&family=Alegreya:wght@400;500&display=swap" rel="stylesheet" />
@@ -14,7 +14,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="src/style.css" />
-  <link rel="stylesheet" href="src/news.css" />
+  <link rel="stylesheet" href="src/post-detail.css" />
   <link rel="stylesheet" href="src/perf.css" />
   <link rel="icon" type="image/png" href="https://res.cloudinary.com/dfvumcrsy/image/upload/v1753020566/kascote_white_bg_logo_qchqim.png">
 </head>
@@ -37,7 +37,6 @@
       <div class="cta-buttons">
         <button id="loginBtn" class="btn-join">JOIN KASCOTE</button>
         
-        <!-- This block will be shown when the user is logged in -->
         <div id="userProfile" style="display: none; align-items: center; gap: 1rem;">
           <img id="userPhoto" src="" alt="User Photo" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
           <span id="userName" style="color: var(--kascoten-green); font-weight: bold;"></span>
@@ -56,7 +55,6 @@
       </div>
     </div>
 
-    <!-- Mobile Overlay Menu -->
     <div class="overlay-menu" id="overlayMenu">
       <div class="overlay-header">
         <img src="kascote logo.png" alt="kascote-logo">
@@ -78,82 +76,117 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="news-hero">
-    <div class="news-hero-content">
-      <h1>News & Insights</h1>
-      <p>Stay updated with the latest developments from KASCOTE, industry trends, and business opportunities</p>
-    </div>
-    <div class="news-hero-bg"></div>
-  </section>
+  <!-- Loading State -->
+  <div class="post-loading" id="postLoading">
+    <i class="fas fa-spinner fa-spin"></i>
+    <p>Loading article...</p>
+  </div>
 
-  <!-- Filter and Search Section -->
-  <section class="news-controls">
-    <div class="controls-container">
-      <div class="search-bar">
-        <input 
-          type="text" 
-          id="searchInput" 
-          placeholder="Search articles..."
-          class="search-input"
-        >
-        <i class="fas fa-search"></i>
-      </div>
+  <!-- Main Content -->
+  <main class="post-detail-container" id="postDetailContainer" style="display: none;">
+    
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="news.html"><i class="fas fa-newspaper"></i> News & Insights</a>
+      <span>/</span>
+      <span id="breadcrumbTitle"></span>
+    </div>
+
+    <!-- Article Header -->
+    <article class="post-detail-article">
       
-      <div class="filter-tags">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="news">News</button>
-        <button class="filter-btn" data-filter="blog">Blog</button>
-        <button class="filter-btn" data-filter="events">Events</button>
-        <button class="filter-btn" data-filter="insights">Insights</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- News Articles Grid -->
-  <section class="news-section">
-    <div class="news-container">
-      <div class="news-grid" id="newsGrid">
-        <!-- News cards will be loaded here by JavaScript from Firebase -->
-        <div class="loading-spinner">
-          <i class="fas fa-spinner fa-spin"></i>
-          <p>Loading articles...</p>
+      <!-- Meta Info -->
+      <div class="article-meta">
+        <div class="meta-left">
+          <span class="article-category" id="articleCategory"></span>
+          <span class="article-date" id="articleDate"></span>
+          <span class="read-time" id="readTime"></span>
+        </div>
+        <div class="meta-right">
+          <button class="share-btn" id="shareBtn" title="Share article">
+            <i class="fas fa-share-alt"></i> Share
+          </button>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- No Results Message -->
-  <section class="no-results" id="noResults" style="display: none;">
-    <div class="no-results-content">
-      <i class="fas fa-search"></i>
-      <h2>No articles found</h2>
-      <p>Try adjusting your filters or search terms</p>
-    </div>
-  </section>
+      <!-- Article Title -->
+      <h1 class="article-title" id="articleTitle"></h1>
 
-  <!-- Newsletter Signup Section -->
-  <section class="newsletter-section">
-    <div class="newsletter-container">
-      <h2>Subscribe to Our Newsletter</h2>
-      <p>Get the latest news, insights, and updates delivered to your inbox</p>
-      <form class="newsletter-form" id="newsletterForm">
-        <input 
-          type="email" 
-          placeholder="Enter your email address" 
-          required 
-          class="newsletter-input"
-        >
-        <button type="submit" class="newsletter-btn">Subscribe</button>
+      <!-- Article Author Info -->
+      <div class="author-info">
+        <div class="author-avatar" id="authorAvatar"></div>
+        <div class="author-details">
+          <div class="author-name" id="authorName"></div>
+          <div class="author-bio" id="authorBio"></div>
+        </div>
+      </div>
+
+      <!-- Featured Image -->
+      <div class="featured-image-container">
+        <img id="featuredImage" src="" alt="Featured" class="featured-image" loading="lazy">
+        <div class="image-caption" id="imageCaption"></div>
+      </div>
+
+      <!-- Article Content -->
+      <div class="article-content" id="articleContent"></div>
+
+      <!-- Image Gallery (for multiple images) -->
+      <section class="image-gallery-section" id="imageGallerySection" style="display: none;">
+        <h3>Gallery</h3>
+        <div class="image-gallery" id="imageGallery"></div>
+      </section>
+
+      <!-- Article Footer -->
+      <div class="article-footer">
+        <div class="article-tags" id="articleTags"></div>
+        
+        <div class="article-engagement">
+          <button class="engagement-btn like-btn" id="likeBtn" data-article-id="">
+            <i class="far fa-heart"></i>
+            <span id="likeCount">0</span>
+          </button>
+          <button class="engagement-btn comment-btn" id="commentBtn" data-article-id="">
+            <i class="far fa-comment"></i>
+            <span id="commentCount">0</span>
+          </button>
+          <button class="engagement-btn share-btn-footer" id="shareBtn2">
+            <i class="fas fa-share-alt"></i>
+            <span>Share</span>
+          </button>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- Comments Section -->
+    <section class="comments-section" id="commentsSection">
+      <h3>Comments</h3>
+      <div class="comments-list" id="commentsList"></div>
+
+      <form class="comment-form" id="commentForm">
+        <textarea 
+          placeholder="Share your thoughts..." 
+          class="comment-textarea" 
+          id="commentTextarea"
+          required
+        ></textarea>
+        <button type="submit" class="comment-submit-btn" id="submitCommentBtn">Post Comment</button>
       </form>
-      <div id="newsletterMessage" class="newsletter-message"></div>
+    </section>
+
+  </main>
+
+  <!-- Related Articles Section -->
+  <section class="related-articles" id="relatedArticlesSection">
+    <div class="related-container">
+      <h2>Related Articles</h2>
+      <div class="related-grid" id="relatedGrid"></div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="kascoten-footer">
     <div class="footer-container">
-      <!-- Logo and Description -->
       <div class="footer-logo">
         <h2>KASCOTE</h2>
         <p>
@@ -162,7 +195,6 @@
         </p>
       </div>
 
-      <!-- Services -->
       <div class="footer-section">
         <h4>Services</h4>
         <ul>
@@ -174,7 +206,6 @@
         </ul>
       </div>
 
-      <!-- Membership & Benefits -->
       <div class="footer-section">
         <h4>Membership & Benefits</h4>
         <ul>
@@ -186,7 +217,6 @@
         </ul>
       </div>
 
-      <!-- Contact and Social Links -->
       <div class="footer-contact">
         <a href="contact.html" class="contact-btn">CONTACT US</a>
         <h4>Connect with Us</h4>
@@ -200,26 +230,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- Comment Modal -->
-  <div class="modal" id="commentsModal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3>Comments</h3>
-        <button class="modal-close">&times;</button>
-      </div>
-      <div class="comments-list" id="commentsList"></div>
-      <div class="add-comment">
-        <input 
-          type="text" 
-          placeholder="Add a comment..." 
-          class="comment-input" 
-          id="commentInput"
-        >
-        <button class="submit-comment" id="submitComment">Post</button>
-      </div>
-    </div>
-  </div>
 
   <!-- Firebase Imports -->
   <script type="module">
@@ -241,7 +251,6 @@
     const db = getFirestore(app);
     const provider = new GoogleAuthProvider();
 
-    // Make these globally accessible for news.js
     window.auth = auth;
     window.db = db;
     window.provider = provider;
@@ -254,6 +263,6 @@
   <!-- Main Scripts -->
   <script type="module" src="src/perf-monitor.js"></script>
   <script type="module" src="src/script.js"></script>
-  <script type="module" src="src/news.js"></script>
+  <script type="module" src="src/post-detail.js"></script>
 </body>
 </html>

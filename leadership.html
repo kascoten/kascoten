@@ -35,8 +35,15 @@
   <a href="contact.html">Contact Us</a>
 </nav>
       <div class="cta-buttons">
-      <button class="btn-join">JOIN KASCOTEN</button>
-    </div>
+        <button id="loginBtn" class="btn-join">JOIN KASCOTEN</button>
+        
+        <!-- This block will be shown when the user is logged in -->
+        <div id="userProfile" style="display: none; align-items: center; gap: 1rem;">
+          <img id="userPhoto" src="" alt="User Photo" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+          <span id="userName" style="color: var(--kascoten-green); font-weight: bold;"></span>
+          <button id="logoutBtn" class="btn-join">Logout</button>
+        </div>
+      </div>
 
       
       

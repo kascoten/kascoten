@@ -8,7 +8,8 @@
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@700&family=Alegreya:wght@400;500&display=swap" rel="stylesheet" />
   
-  <script src="https://kit.fontawesome.com/YOUR_KIT_ID.js" crossorigin="anonymous"></script> 
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/5da3338349.js" crossorigin="anonymous"></script>
 
   <!-- CSS -->
   <link rel="stylesheet" href="src/style.css" />
@@ -35,9 +36,15 @@
   <a href="contact.html">Contact Us</a>
 </nav>
       <div class="cta-buttons">
-<a href="https://forms.gle/x1pk8bJcTWS92SMa9" target="_blank">
-  <button class="btn-join">JOIN KASCOTEN</button>
-</a>    </div>
+        <button id="loginBtn" class="btn-join">JOIN KASCOTEN</button>
+        
+        <!-- This block will be shown when the user is logged in -->
+        <div id="userProfile" style="display: none; align-items: center; gap: 1rem;">
+          <img id="userPhoto" src="" alt="User Photo" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+          <span id="userName" style="color: var(--kascoten-green); font-weight: bold;"></span>
+          <button id="logoutBtn" class="btn-join">Logout</button>
+        </div>
+      </div>
 
       
       
