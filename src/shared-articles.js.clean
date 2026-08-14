@@ -1,0 +1,323 @@
+﻿// ============================
+// SHARED ARTICLE DATA - Single Source of Truth
+// ============================
+// This file contains all article data used across the website
+// It's loaded by post-detail.js, news.js, and homepage-news.js
+
+// Function to generate random likes count (50-150)
+function getRandomLikes() {
+  return Math.floor(Math.random() * 101) + 50;
+}
+
+window.KASCOTE_SAMPLE_ARTICLES = [
+  {
+    id: '1',
+    title: 'KASCOTE Business Matching with Indonesian Companies',
+    excerpt: 'Strategic B2B meetings bring together KASCOTE members with Indonesian business partners, creating direct pathways for trade, partnerships, and market expansion.',
+    content: 'KASCOTE organized a comprehensive business matching session bringing together Nigerian entrepreneurs and Indonesian companies, creating unprecedented opportunities for bilateral trade and partnerships. This strategic initiative facilitated direct connections between businesses seeking mutual growth and collaboration.\n\nBusiness Matching Overview\n\nThe business matching event was designed to:\n- Connect Nigerian traders and manufacturers with Indonesian business partners\n- Facilitate face-to-face B2B negotiations\n- Explore joint venture opportunities\n- Establish distribution and supply chain relationships\n- Create frameworks for long-term commercial partnerships\n\nKey Outcomes Achieved\n\n1. Direct Business Connections\n- Over 50+ business meetings conducted between participants\n- Multiple sectors represented: agriculture, manufacturing, textiles, technology\n- Quality interactions leading to potential contracts\n- Exchange of business proposals and product information\n\n2. Partnership Discussions\n- Negotiations on distributor arrangements\n- Exploration of import-export opportunities\n- Discussion of joint production ventures\n- Establishment of supply agreements\n\n3. Market Insights Shared\n- Indonesian companies learned about Nigerian market opportunities\n- Nigerian entrepreneurs gained knowledge of Indonesian business culture\n- Understanding of payment terms and trade logistics\n- Regulatory and compliance requirements clarified\n\n4. Follow-up Mechanisms Established\n- Exchange of contact information and business cards\n- Commitment to further discussions post-event\n- Preliminary agreements for continued negotiations\n- Plans for future business delegations\n\nIndustries Represented\n\nAgriculture & Food Products\n- Spice and seasoning suppliers\n- Agricultural equipment manufacturers\n- Food processing companies\n- Export produce dealers\n\nManufacturing & Textiles\n- Garment manufacturers\n- Textile mills\n- Industrial machinery producers\n- Fashion and apparel companies\n\nTechnology & Services\n- Tech solutions providers\n- Logistics and shipping companies\n- Business service providers\n- Software development firms\n\nBenefits for KASCOTE Members\n\nThis business matching initiative has delivered tangible advantages:\n- Direct access to Indonesian suppliers and buyers\n- Cost-effective networking compared to traditional trade missions\n- Immediate business opportunities identification\n- Reduced market entry barriers to Indonesia\n- Reliable business partner verification\n\nFuture Prospects\n\nThe success of this business matching event has established a foundation for:\n- Repeat business matching sessions\n- Long-term trade relationships between Nigeria and Indonesia\n- Increased bilateral commerce\n- Sustainable business partnerships\n- Regular business delegations\n\nCASCOTE\'s commitment to creating these valuable networking platforms demonstrates our dedication to connecting Nigerian entrepreneurs with international markets and reliable business partners. Through strategic business matching, we transform international trade from a distant opportunity into a practical, achievable goal for our members.',
+    imageUrl: 'KASCOTEN IMAGES/indonesia-25-visit/indonesia-25-visit-7.jpeg',
+    category: 'b2b',
+    author: 'KASCOTE Business Development',
+    publishedAt: { seconds: Math.floor(new Date(2025, 11, 18).getTime() / 1000) },
+    readTime: 9,
+    likesCount: getRandomLikes(),
+    tags: ['business-matching', 'b2b', 'indonesia', 'partnerships', 'trade'],
+    images: [
+      { url: 'KASCOTEN IMAGES/indonesia-25-visit/indonesia-25-visit-7.jpeg', caption: 'KASCOTE business matching session with Indonesian partners' },
+      { url: 'KASCOTEN IMAGES/indonesia-25-visit/indonesia-25-visit-6.jpeg', caption: 'B2B negotiations between Nigerian and Indonesian companies' },
+      { url: 'KASCOTEN IMAGES/indonesia-25-visit/indonesia-25-visit-8.jpeg', caption: 'Business delegates exchanging information' },
+      { url: 'KASCOTEN IMAGES/indonesia-25-visit/indonesia-25-visit-10.jpeg', caption: 'Networking session with Indonesian business leaders' }
+    ]
+  },
+  {
+    id: '2',
+    title: 'Sommet de l\'Elevage: Kano\'s Agricultural Innovation Showcased',
+    excerpt: 'Our delegation participated in the world\'s leading sustainable livestock show in France, showcasing Kano\'s agricultural potential to 120,000+ international visitors.',
+    content: 'In October 2025, KASCOTE attended Sommet de l\'Ã©levage â€” the world\'s No.1 sustainable livestock and agricultural show in France. This event drew over 120,000 visitors from 90 countries, providing an exceptional platform for Kano\'s traders and farmers to showcase their products and establish international connections.\n\nSommet de l\'Ã©levage is the premier global event for the livestock and meat industry. It attracts industry leaders, investors, and decision-makers from across the world. Our participation positioned Kano\'s agricultural sector on the international stage.\n\nOur delegation showcased:\n- Kano\'s quality livestock products\n- Sustainable farming practices\n- Agricultural technology innovations\n- Traditional production methods\n\nNetworking outcomes:\n- Explored export opportunities to European markets\n- Connected with international agricultural investors\n- Learned best practices in sustainable livestock farming\n- Established relationships with major importers\n\nThis participation strengthens Kano\'s position as a leading agricultural hub in Africa.',
+    imageUrl: 'KASCOTEN IMAGES/france-25 visit/france-25 visit-1.jpeg',
+    category: 'annual-events',
+    author: 'KASCOTE Leadership',
+    publishedAt: new Date(2025, 9, 15),
+    readTime: 6,
+    likesCount: getRandomLikes(),
+    tags: ['agriculture', 'livestock', 'france', 'sustainability'],
+    images: [
+      {
+        url: 'KASCOTEN IMAGES/Sommet de l\'Ã©levage Visit/Sommet de l\'Ã©levage Visit6.jpg',
+        caption: 'KASCOTE booth at Sommet de l\'Ã©levage'
+      }
+    ]
+  },
+  {
+    id: '3',
+    title: 'KASCOTE Delegation Visits Bonyang University Jakarta Indonesia',
+    excerpt: 'An important academic and business exchange at Bonyang University in Jakarta, strengthening educational partnerships and fostering knowledge transfer between Nigerian and Indonesian institutions.',
+    content: 'KASCOTE leadership and members recently concluded a significant visit to Bonyang University in Jakarta, Indonesia, marking a milestone in fostering educational and business partnerships between Nigeria and Indonesia. This delegation visit showcased our commitment to building bridges between academic institutions and the business community.\n\nThe visit to Bonyang University provided a valuable platform for:\n\nAcademic Exchange\n- Exploring collaboration opportunities in business and entrepreneurship education\n- Discussing curriculum development and knowledge sharing\n- Learning about Indonesian educational approaches to business training\n- Identifying potential internship and exchange programs\n\nBusiness Networking\n- Connecting KASCOTE members with university faculty and researchers\n- Exploring joint venture opportunities\n- Discussing market research and business intelligence\n- Establishing relationships with academic leaders in Indonesia\n\nKey Outcomes from the Visit\n\n1. Educational Partnerships\n- Preliminary agreements for student exchange programs\n- Faculty collaboration opportunities\n- Joint research initiatives in trade and commerce\n\n2. Business Development\n- Introduction to Indonesian market insights\n- Connection with university-based business incubators\n- Exploration of technology transfer opportunities\n\n3. Cultural Exchange\n- Understanding Indonesian business culture and practices\n- Building personal relationships with university leadership\n- Strengthening bilateral trade relations through education\n\nThe Bonyang University visit exemplifies KASCOTE\'s holistic approach to international trade and partnerships. By engaging with academic institutions, we create sustainable frameworks for long-term business relationships and knowledge exchange. This visit has opened doors for future collaborations that will benefit both our members and the broader Nigerian business community.\n\nAs we continue to expand our international footprint, partnerships like those at Bonyang University in Jakarta represent the future of global commerceâ€”one built on education, mutual respect, and shared prosperity.',
+    imageUrl: 'KASCOTEN IMAGES/indonesia-25-visit/indonesia-25-visit-17.jpeg',
+    category: 'visitations',
+    author: 'KASCOTE International Relations',
+    publishedAt: { seconds: Math.floor(new Date(2025, 11, 15).getTime() / 1000) },
+    readTime: 7,
+    likesCount: getRandomLikes(),
+    tags: ['education', 'partnership', 'jakarta', 'university', 'indonesia'],
+    images: [
+      { url: 'KASCOTEN IMAGES/indonesia-25-visit/indonesia-25-visit-17.jpeg', caption: 'KASCOTE delegation at Bonyang University' },
+      { url: 'KASCOTEN IMAGES/indonesia-25-visit/indonesia-25-visit-13.jpeg', caption: 'KASCOTE delegation at Bonyang University' },
+      { url: 'KASCOTEN IMAGES/indonesia-25-visit/indonesia-25-visit-14.jpeg', caption: 'KASCOTE delegation at Bonyang University' },
+      { url: 'KASCOTEN IMAGES/indonesia-25-visit/indonesia-25-visit-16.jpeg', caption: 'KASCOTE delegation at Bonyang University' },
+      { url: 'KASCOTEN IMAGES/indonesia-25-visit/indonesia-25-visit-25.jpeg', caption: 'KASCOTE delegation at Bonyang University' },
+      { url: 'KASCOTEN IMAGES/indonesia-25-visit/indonesia-25-visit-29.mp4', caption: 'KASCOTE delegation at Bonyang University' },
+      { url: 'KASCOTEN IMAGES/indonesia-25-visit/indonesia-25-visit-30.mp4', caption: 'KASCOTE delegation at Bonyang University' },
+      { url: 'KASCOTEN IMAGES/indonesia-25-visit/indonesia-25-visit-28.mp4', caption: 'Academic and business leaders meeting at Bonyang University' }
+    ]
+  },
+  {
+    id: '4',
+    title: 'New Year 2026: Setting Business Goals for Growth',
+    excerpt: 'As we step into 2026, discover strategies to set ambitious yet achievable business goals and leverage KASCOTE\'s resources for success.',
+    content: 'The new year brings fresh opportunities for Kano\'s business community. Whether you\'re a trader, farmer, or manufacturer, this guide provides actionable strategies for setting 2026 goals. Learn how KASCOTE\'s programs can support your growth journey.',
+    imageUrl: 'KASCOTEN IMAGES/year-2026-new-yaer-flyer.jpeg',
+    category: 'insights',
+    author: 'Strategic Planning Office',
+    publishedAt: new Date(2026, 0, 5),
+    readTime: 8,
+    likesCount: getRandomLikes(),
+    tags: ['goals', 'growth', '2026'],
+    images: []
+  },
+  {
+    id: '5',
+    title: 'KASCOTE Delegation Visits Nigerian Embassy in Indonesia',
+    excerpt: 'A diplomatic mission strengthening bilateral business relations between Nigeria and Indonesia through official government channels.',
+    content: 'As part of their official trade mission to Jakarta, Indonesia, the leadership and members of KASCOTE paid a courtesy visit to the Embassy of the Federal Republic of Nigeria in Indonesia. This diplomatic engagement reinforces our commitment to fostering international business partnerships at the highest levels.',
+    imageUrl: 'KASCOTEN IMAGES/indonesian trade expo 2025/Indonesian-trade-expo-25-8.jpg',
+    category: 'visitations',
+    author: 'KASCOTE Leadership',
+    publishedAt: new Date(2025, 11, 12),
+    readTime: 4,
+    likesCount: getRandomLikes(),
+    tags: ['diplomacy', 'embassy', 'indonesia'],
+    images: []
+  },
+  {
+    id: '6',
+    title: 'Women Entrepreneurs in Kano: Breaking Barriers',
+    excerpt: 'Celebrating the achievements of Kano\'s women entrepreneurs and exploring support programs available through KASCOTE.',
+    content: 'Women entrepreneurs are driving innovation and economic growth in Kano. This article highlights success stories from our female members and discusses resources KASCOTE provides to support women in business, including networking opportunities and mentorship programs.',
+    imageUrl: 'https://res.cloudinary.com/dfvumcrsy/image/upload/v1753270696/kascoten-membership_jeh8uq.jpg',
+    category: 'blog',
+    author: 'Women\'s Business Initiative',
+    publishedAt: new Date(2025, 10, 28),
+    readTime: 6,
+    likesCount: getRandomLikes(),
+    tags: ['women', 'entrepreneurship', 'empowerment'],
+    images: []
+  },
+  {
+    id: '7',
+    title: 'KASCOTE Trade Mission to Paris',
+    excerpt: 'Explore the highlights from our successful trade mission to Paris, showcasing Kano\'s business opportunities on the international stage.',
+    content: 'KASCOTE\'s delegation to Paris was a significant milestone in expanding international trade relationships. The mission focused on connecting Nigerian entrepreneurs with European business partners and exploring new market opportunities.',
+    imageUrl: 'KASCOTEN IMAGES/france-25 visit/france-25 visit-1.jpeg',
+    category: 'visitations',
+    author: 'KASCOTE Leadership',
+    publishedAt: new Date(2025, 10, 20),
+    readTime: 5,
+    likesCount: getRandomLikes(),
+    tags: ['paris', 'trade-mission', 'europe'],
+    images: [
+      { url: 'KASCOTEN IMAGES/france-25 visit/france-25 visit-1.jpeg', caption: 'KASCOTE delegation in Paris' },
+      { url: 'KASCOTEN IMAGES/france-25 visit/france-25 visit-2.jpeg', caption: 'Business networking in Paris' },
+      { url: 'KASCOTEN IMAGES/france-25 visit/france-25 visit-3.jpeg', caption: 'Trade partnership discussions' }
+    ]
+  },
+  {
+    id: '8',
+    title: 'Kano International Trade Fair 2025: Showcasing Local Businesses',
+    excerpt: 'KASCOTE members displayed their products and services at the prestigious Kano International Trade Fair, connecting with customers and business partners across the region.',
+    content: 'The Kano International Trade Fair 2025 provided an excellent platform for KASCOTE members to showcase their businesses to a wide audience. The event brought together traders, manufacturers, and service providers from various industries, creating opportunities for networking and direct sales.\n\nKey Highlights:\n- Over 150 participating businesses\n- 5,000+ visitors from the Kano region\n- Live product demonstrations\n- Business networking sessions\n- Industry awards and recognition\n\nThis trade fair strengthened KASCOTE\'s presence in the local market and demonstrated the diversity and quality of Kano\'s business community.',
+    imageUrl: 'KASCOTEN IMAGES/kano-free-tade-zone24/kano-free-tade-zone-1.jpeg',
+    category: 'local-exhibitions',
+    author: 'KASCOTE Events',
+    publishedAt: new Date(2025, 9, 10),
+    readTime: 4,
+    likesCount: getRandomLikes(),
+    tags: ['trade-fair', 'kano', 'exhibitions', 'local-business'],
+    images: [
+      { url: 'KASCOTEN IMAGES/kano-free-tade-zone24/kano-free-tade-zone-1.jpeg', caption: 'KASCOTE booth at Kano Trade Fair' },
+      { url: 'KASCOTEN IMAGES/kano-free-tade-zone24/kano-free-tade-zone-2.jpeg', caption: 'Business leaders networking' }
+    ]
+  },
+  {
+    id: '9',
+    title: 'International Trade Expo Jakarta 2025: Connecting Nigeria & Indonesia',
+    excerpt: 'KASCOTE participated in the Indonesia International Trade Expo 2025, showcasing Nigerian business opportunities and building bridges with international traders.',
+    content: 'The International Trade Expo in Jakarta presented a unique opportunity for KASCOTE to establish the presence of Nigerian businesses in one of Southeast Asia\'s largest markets. Our delegation participated alongside prominent international exhibitors, positioning Kano\'s entrepreneurs on the global stage.\n\nExhibition Outcomes:\n- Connected with 50+ international businesses\n- Signed preliminary agreements for trade partnerships\n- Generated inquiries for Nigerian products\n- Explored distribution opportunities in Southeast Asia\n- Built relationships with key industry players\n\nThis international exhibition has opened new doors for KASCOTE members seeking to expand into Asian markets and establish long-term international partnerships.',
+    imageUrl: 'KASCOTEN IMAGES/indonesian trade expo 2025/Indonesian-trade-expo-25-1.jpg',
+    category: 'international-exhibitions',
+    author: 'KASCOTE International Division',
+    publishedAt: new Date(2025, 10, 5),
+    readTime: 5,
+    likesCount: getRandomLikes(),
+    tags: ['international-expo', 'jakarta', 'trade', 'global-business'],
+    images: [
+      { url: 'KASCOTEN IMAGES/indonesian trade expo 2025/Indonesian-trade-expo-25-1.jpg', caption: 'KASCOTE booth at Jakarta Trade Expo' },
+      { url: 'KASCOTEN IMAGES/indonesian trade expo 2025/Indonesian-trade-expo-25-8.jpg', caption: 'International business networking' }
+    ]
+  },
+  {
+    id: '10',
+    title: 'Delegation Visit to Kano Free Trade Zone',
+    excerpt: 'Our delegation, alongside the Indonesian ambassador and business leaders, explored trade opportunities within Kano\'s Free Trade Zone, examining export corridors and investment potential.',
+    content: 'KASCOTE organized a comprehensive delegation visit to the Kano Free Trade Zone, bringing together government officials, business leaders, and international representatives including the Indonesian ambassador. This strategic visit aimed to showcase Kano\'s competitive advantages as a trade hub and explore opportunities for foreign direct investment.\n\nDelegation Highlights:\n\nSite Inspection and Infrastructure Review\n- Toured modern warehouse and logistics facilities\n- Examined export processing centers\n- Reviewed customs clearance procedures\n- Assessed cold chain and specialized storage capabilities\n- Evaluated transport infrastructure and connectivity\n\nBusiness Opportunities Identified\n- Export opportunities for agricultural products\n- Manufacturing partnerships and joint ventures\n- Logistics and warehousing services\n- Value-added processing facilities\n- Technology integration for trade facilitation\n\nInternational Partnerships\n- Indonesian business leaders explored investment opportunities\n- Discussion of bilateral trade corridors\n- Potential collaboration on port-adjacent facilities\n- Knowledge sharing on free zone best practices\n\nOutcomes and Next Steps\n- Preliminary memorandums of understanding signed\n- Follow-up business matching sessions scheduled\n- Site capacity expansion proposals discussed\n- Training and capacity building initiatives planned\n\nThe Kano Free Trade Zone visit reaffirmed Kano\'s position as a gateway for international trade and demonstrated the readiness of our business community to engage in global commerce at the highest level.',
+    imageUrl: 'KASCOTEN IMAGES/kano-free-tade-zone24/kano-free-tade-zone24-1.jpg',
+    category: 'visitations',
+    author: 'KASCOTE Leadership',
+    publishedAt: new Date(2025, 6, 15),
+    readTime: 6,
+    likesCount: getRandomLikes(),
+    tags: ['kano', 'free-trade-zone', 'investment', 'trade-hub'],
+    images: [
+      { url: 'KASCOTEN IMAGES/kano-free-tade-zone24/kano-free-tade-zone24-1.jpg', caption: 'Delegation viewing Kano Free Trade Zone facilities' },
+      { url: 'KASCOTEN IMAGES/kano-free-tade-zone24/kano-free-tade-zone24-2.jpg', caption: 'Infrastructure and logistics center tour' },
+      { url: 'KASCOTEN IMAGES/kano-free-tade-zone24/kano-free-tade-zone24-3.jpg', caption: 'Business leaders discussing investment opportunities' },
+      { url: 'KASCOTEN IMAGES/kano-free-tade-zone24/kano-free-tade-zone24-4.jpg', caption: 'Site inspection with international partners' },
+      { url: 'KASCOTEN IMAGES/kano-free-tade-zone24/kano-free-tade-zone24-5.jpg', caption: 'Warehouse and storage facilities overview' },
+      { url: 'KASCOTEN IMAGES/kano-free-tade-zone24/kano-free-tade-zone24-6.jpg', caption: 'Export processing center demonstration' },
+      { url: 'KASCOTEN IMAGES/kano-free-tade-zone24/kano-free-tade-zone24-8.mp4', caption: 'Delegation video tour of the facility' }
+    ]
+  },
+  {
+    id: '11',
+    title: 'Special Visit to CEO Asia Group',
+    excerpt: 'Special visit to CEO Asia Group leadership with the Indonesian Embassy delegation to explore business opportunities and strengthen Nigeria-Indonesia business ties.',
+    content: 'Under the distinguished leadership of Mr Fahmi Aris Inaya, ChargÃ© d\'Affaires of the Indonesian Embassy, KASCOTE leadership conducted a special visit to CEO Asia Group. This strategic engagement brought together key executives from both organizations to discuss mutual business interests, investment opportunities, and pathways for collaboration.\n\nVisit Objectives\n\nBusiness Engagement\n- Explore manufacturing and supply chain partnerships\n- Discuss import-export opportunities\n- Review product portfolios and market fit\n- Identify joint venture possibilities\n\nDiplomatic Relations\n- Strengthen Nigeria-Indonesia business relationships\n- Facilitate government-to-business dialogue\n- Explore policy support for bilateral trade\n- Discuss trade promotion initiatives\n\nKey Discussions\n\nMarket Analysis\n- Nigerian market size and consumer preferences\n- Indonesian manufacturing capabilities\n- Competitive advantages and pricing strategies\n- Quality standards and certifications\n\nOperational Considerations\n- Production capacity and scaling potential\n- Logistics and supply chain management\n- Compliance and regulatory requirements\n- Timeline for business commencement\n\nOutcomes\n- Expression of interest in business collaboration\n- Agreement to conduct detailed feasibility studies\n- Planned follow-up meetings with senior management\n- Preliminary discussion of trial shipments\n- Connection with other KASCOTE members for partnership\n\nThis visit represents a significant step toward actualizing the trade vision between Nigeria and Indonesia, with CEO Asia Group positioned as a key partner in our continental expansion strategy.',
+    imageUrl: 'KASCOTEN IMAGES/visitations/visitation-to-3.jpg',
+    category: 'visitations',
+    author: 'KASCOTE International Relations',
+    publishedAt: new Date(2025, 6, 5),
+    readTime: 5,
+    likesCount: getRandomLikes(),
+    tags: ['business-engagement', 'indonesia', 'partnership', 'ceo-asia-group'],
+    images: [
+      { url: 'KASCOTEN IMAGES/visitations/visitation-to-3.jpg', caption: 'Facility tour with operational insights' },
+      { url: 'KASCOTEN IMAGES/visitations/visitation-to-4.jpg', caption: 'Group photo with Indonesian embassy officials' }
+    ]
+  },
+  {
+    id: '12',
+    title: 'KASCOTE Visitation to Jalla Radio',
+    excerpt: 'KASCOTE leadership visited Jalla Radio to discuss entrepreneurship awareness and trade promotion initiatives with local media partners.',
+    content: 'KASCOTE executives conducted an important visit to Jalla Radio, one of Kano\'s leading media outlets, to advance our mission of entrepreneurship awareness and trade promotion. This strategic media engagement allowed us to reach wider audiences and amplify our message about business opportunities, trade missions, and membership benefits.\n\nVisitation Purpose\n\nMediaia Partnership\n- Explore sponsorship opportunities for radio programs\n- Discuss documentary features on KASCOTE activities\n- Plan entrepreneurship awareness campaigns\n- Develop trade-focused radio content\n\nStakeholder Communication\n- Reach Kano\'s business community through radio\n- Promote upcoming trade missions and events\n- Highlight success stories of KASCOTE members\n- Encourage business participation and membership\n\nKey Discussions\n\nContent and Programming\n- Entrepreneurship talk show formats\n- Trade news and market updates\n- Interview series with successful business owners\n- Live coverage of KASCOTE events\n- Business tips and advisory segments\n\nAudience Reach\n- Estimated listenership and demographics\n- Peak listening hours and target markets\n- Integration with digital platforms\n- Social media amplification strategies\n\nOutcomes Achieved\n- Agreement on sponsored content series\n- Monthly live interview slot confirmed\n- Event coverage and promotion commitment\n- Collaboration on membership drives\n- Producer assignment for ongoing coverage\n\nThis media partnership strengthens KASCOTE\'s visibility and enables us to reach potential members and business partners through trusted local media channels, amplifying our impact across the Kano business community.',
+    imageUrl: 'KASCOTEN IMAGES/jall-radio-24-visit/jall-radio-24-visit-4.jpg',
+    category: 'visitations',
+    author: 'KASCOTE Communications',
+    publishedAt: new Date(2025, 5, 10),
+    readTime: 4,
+    likesCount: getRandomLikes(),
+    tags: ['media', 'radio', 'awareness', 'entrepreneurship'],
+    images: [
+      { url: 'KASCOTEN IMAGES/jall-radio-24-visit/jall-radio-24-visit-1.jpg', caption: 'KASCOTE team at Jalla Radio studio' },
+      { url: 'KASCOTEN IMAGES/jall-radio-24-visit/jall-radio-24-visit-2.jpg', caption: 'Live recording session discussing business opportunities' },
+      { url: 'KASCOTEN IMAGES/jall-radio-24-visit/jall-radio-24-visit-3.jpg', caption: 'Interview with radio producers and hosts' },
+      { url: 'KASCOTEN IMAGES/jall-radio-24-visit/jall-radio-24-visit-4.jpg', caption: 'KASCOTE representatives at radio station' }
+    ]
+  },
+  {
+    id: '13',
+    title: 'Visitation to Ammasco Radio',
+    excerpt: 'KASCOTE executives visited Ammasco Radio to discuss entrepreneurship awareness, trade promotion initiatives, and media partnership opportunities.',
+    content: 'KASCOTE leadership made a strategic visit to Ammasco Radio, another prominent media platform in Kano, to expand our reach in entrepreneurship advocacy and trade promotion. This visit reinforced our commitment to engaging local media partners in spreading awareness about business opportunities and KASCOTE\'s role in supporting entrepreneurs.\n\nVisitation Objectives\n\nMedia Collaboration\n- Establish regular media coverage for KASCOTE activities\n- Develop business and trade-focused programming\n- Create platforms for member visibility and networking\n- Support entrepreneurship education through radio\n\nCommunity Engagement\n- Reach traders and small business owners\n- Promote upcoming trade missions and events\n- Share success stories from KASCOTE members\n- Encourage participation in association activities\n\nKey Topics Discussed\n\nProgram Development\n- Business advisory and tips segments\n- Trade market analysis and insights\n- Member success story features\n- Industry-specific discussion panels\n- Export-import guidance programs\n\nPromotional Initiatives\n- Sponsorship of daily business segments\n- Weekly entrepreneurship feature segments\n- Event announcement and live coverage\n- Membership recruitment campaigns\n- Business directory and services promotion\n\nStrategic Outcomes\n- Weekly business segment agreement secured\n- Monthly special event broadcasts planned\n- Advertising package for member promotions\n- Producer collaboration for content creation\n- Cross-promotion with digital platforms\n\nThis partnership with Ammasco Radio extends our communication channels and helps us reach a broader audience of potential members, business partners, and stakeholders within the Kano business ecosystem.',
+    imageUrl: 'KASCOTEN IMAGES/ammsaco-radio-visit/ammsaco-radio-visit-1.jpg',
+    category: 'visitations',
+    author: 'KASCOTE Communications',
+    publishedAt: new Date(2025, 4, 20),
+    readTime: 4,
+    likesCount: getRandomLikes(),
+    tags: ['media-partnership', 'radio', 'business-promotion', 'entrepreneurship'],
+    images: [
+      { url: 'KASCOTEN IMAGES/ammsaco-radio-visit/ammsaco-radio-visit-1.jpg', caption: 'KASCOTE team with Ammasco Radio executives' },
+      { url: 'KASCOTEN IMAGES/ammsaco-radio-visit/ammsaco-radio-visit-2.jpg', caption: 'Media partnership discussion and planning session' }
+    ]
+  },
+  {
+    id: '14',
+    title: 'Courtesy Visit to the Indonesian Ambassador',
+    excerpt: 'A formal diplomatic visit to the Indonesian Ambassador to discuss bilateral trade opportunities, market access, and collaborative initiatives.',
+    content: 'KASCOTE delegation made an important courtesy visit to the Indonesian Ambassador to Nigeria to reinforce diplomatic ties and explore expanded trade opportunities between Nigeria and Indonesia. This high-level engagement created a platform for discussing government support mechanisms and bilateral commerce initiatives.\n\nDiplomatic Engagement\n\nObjectives\n- Strengthen Nigeria-Indonesia bilateral relations\n- Discuss government support for business delegation\n- Explore trade promotion initiatives\n- Identify policy-level support mechanisms\n\nKey Discussion Points\n\nBilateral Trade\n- Current trade volume and market size\n- High-demand products and sectors\n- Market entry strategies for Nigerian businesses\n- Indonesian business interest in Nigerian markets\n\nGovernment Support\n- Embassy facilitation for business missions\n- Visa procedures for trade delegations\n- Trade finance and export credit facilities\n- Regulatory compliance and standards\n\nCollaborative Opportunities\n- Joint trade promotion events\n- Business networking platforms\n- Industry-specific partnerships\n- Educational and training exchanges\n\nOutcomes and Commitments\n- Embassy support for KASCOTE trade missions\n- Facilitation of business introductions\n- Information sharing on market opportunities\n- Regular engagement and updates\n- Invitation to participate in embassy events\n\nThis visit established valuable relationships with diplomatic representatives who can facilitate and support KASCOTE\'s international expansion strategy, particularly in Southeast Asian markets. The ambassador\'s commitment to supporting business engagement creates a strong foundation for Nigeria-Indonesia trade growth.',
+    imageUrl: 'KASCOTEN IMAGES/visitations/indonesian-ambassador-visit-1.jpg',
+    category: 'visitations',
+    author: 'KASCOTE Leadership',
+    publishedAt: new Date(2025, 5, 10),
+    readTime: 5,
+    likesCount: getRandomLikes(),
+    tags: ['diplomacy', 'ambassador', 'bilateral-trade', 'government-relations'],
+    images: [
+      { url: 'KASCOTEN IMAGES/visitations/indonesian-ambassador-visit-1.jpg', caption: 'KASCOTE delegation with Indonesian Ambassador' },
+      { url: 'KASCOTEN IMAGES/visitations/indonesian-ambassador-visit-2.jpg', caption: 'Formal diplomatic discussion on trade relations' },
+      { url: 'KASCOTEN IMAGES/visitations/indonesian-ambassador-visit-3.jpg', caption: 'Group photo commemorating the diplomatic engagement' }
+    ]
+  },
+  {
+    id: '15',
+    title: 'Official Visit with His Excellency Mohsen Antit, Ambassador of Tunisia',
+    excerpt: 'A significant diplomatic visit with the Tunisian Ambassador to reaffirm bilateral relationships and explore collaborative opportunities in key trade sectors.',
+    content: 'KASCOTE leadership paid an official courtesy visit to His Excellency Mohsen Antit, the Ambassador of Tunisia, marking an important milestone in our commitment to creating strong bilateral relationships and exploring trade partnerships with North African nations.\n\nVisit Significance\n\nDiplomatic Relations\n- Strengthening Nigeria-Tunisia business bridges\n- Creating government-level support for trade\n- Exploring continental African trade opportunities\n- Facilitating business introductions and partnerships\n\nKey Agenda Items\n\nMarket Opportunities\n- Tunisia\'s manufacturing sectors and capabilities\n- Nigerian products with demand in North African markets\n- Export corridors and trade routes\n- Investment opportunities for both nations\n\nTrade Facilitation\n- Regulatory compliance and standards alignment\n- Customs procedures and documentation\n- Business visa and travel facilitation\n- Trade finance mechanisms\n\nCollaborative Initiatives\n- Joint business missions and delegations\n- Industry-specific partnerships\n- Knowledge sharing and best practices\n- Long-term business relationships\n\nStrategic Outcomes\n- Ambassador\'s commitment to supporting business engagement\n- Embassy facilitation of business introductions\n- Invitation to participate in Tunisian business events\n- Discussion of future delegation possibilities\n- Information on Tunisian market entry strategies\n\nThis visit opened new avenues for KASCOTE members seeking to expand into North African markets and established crucial diplomatic connections that will support our continental expansion strategy. The ambassador\'s endorsement of business partnerships creates opportunities for mutually beneficial trade relationships.',
+    imageUrl: 'KASCOTEN IMAGES/visitations/tunisian-ambassador-visit.jpg',
+    category: 'visitations',
+    author: 'KASCOTE International Division',
+    publishedAt: new Date(2025, 5, 10),
+    readTime: 5,
+    likesCount: getRandomLikes(),
+    tags: ['tunisia', 'diplomacy', 'north-africa', 'ambassador-visit'],
+    images: [
+      { url: 'KASCOTEN IMAGES/visitations/tunisian-ambassador-visit.jpg', caption: 'KASCOTE delegation with Tunisian Ambassador H.E. Mohsen Antit' }
+    ]
+  },
+  {
+    id: '16',
+    title: 'Hosting Esteemed MÃœSIAD Delegation from Turkey',
+    excerpt: 'We honored the president of MÃœSIAD (Independent Industrialists and Businessmen\'s Association) from Turkey, Mr Tevfik Demirel, exploring business opportunities and international partnerships.',
+    content: 'KASCOTE leadership had the honor of hosting an esteemed delegation from MÃœSIAD (MÃ¼stakil Sanayici ve Ä°ÅŸadamlarÄ± DerneÄŸi - Independent Industrialists and Businessmen\'s Association) of Turkey, led by President Mr Tevfik Demirel. This high-level international visit created exceptional opportunities for networking, business exploration, and establishing connections with one of Turkey\'s largest business associations.\n\nVisit Highlights\n\nAbout MÃœSIAD\n- Leading business association in Turkey\n- Represents over 10,000 entrepreneurs and industrialists\n- Strong focus on SME development and international trade\n- Active in trade missions and business partnerships globally\n\nMeeting Objectives\n\nBusiness Opportunities\n- Explore trade opportunities between Kano and Turkey\n- Identify sectors with high collaboration potential\n- Discuss Turkish manufacturing and export capabilities\n- Review Nigerian products with Turkish market demand\n\nOrganizational Collaboration\n- Exchange of business association best practices\n- Membership and networking program sharing\n- Joint trade mission possibilities\n- Member-to-member business introductions\n\nKey Discussion Topics\n\nTurkish Business Landscape\n- Manufacturing sectors and export strength\n- Investment incentives and government support\n- Quality standards and certifications\n- Supply chain and logistics capabilities\n\nBusiness Opportunities\n- Turkish machinery and equipment imports\n- Textile and garment manufacturing partnerships\n- Food processing and export capabilities\n- Technology and innovation sectors\n\nOutcomes and Agreements\n- Established relationship between KASCOTE and MÃœSIAD\n- Discussion of follow-up business delegation\n- Connection of MÃœSIAD members with KASCOTE traders\n- Preliminary memorandums for business exploration\n- Invitation to international MÃœSIAD events\n\nThis visit positioned Kano and KASCOTE as important business hubs in West Africa and opened doors to Turkey\'s vibrant entrepreneurial ecosystem, creating opportunities for our members to engage with international business leaders and explore new market frontiers.',
+    imageUrl: 'KASCOTEN IMAGES/visitations/turkish-business-community-president-visit.jpg',
+    category: 'visitations',
+    author: 'KASCOTE Leadership',
+    publishedAt: new Date(2025, 5, 10),
+    readTime: 6,
+    likesCount: getRandomLikes(),
+    tags: ['turkey', 'mÃ¼siad', 'international-business', 'delegation'],
+    images: [
+      { url: 'KASCOTEN IMAGES/visitations/turkish-business-community-president-visit.jpg', caption: 'KASCOTE leadership with MÃœSIAD President Mr Tevfik Demirel' }
+    ]
+  },
+  {
+    id: '17',
+    title: 'Courtesy Visit to His Excellency Major General (Retd) Sohail Ahmad Khan, High Commissioner of Pakistan',
+    excerpt: 'A diplomatic visit with Pakistan\'s High Commissioner to strengthen bilateral relations and explore new avenues for trade and commerce.',
+    content: 'KASCOTE delegation met with His Excellency Major General (Retd) Sohail Ahmad Khan, the High Commissioner of Pakistan to Nigeria, in a strategic diplomatic engagement aimed at strengthening Nigeria-Pakistan relations and exploring new opportunities for bilateral trade and business partnerships.\n\nVisit Objectives\n\nDiplomatic Relations\n- Strengthen Nigeria-Pakistan bilateral business ties\n- Create government-level support for commerce\n- Facilitate business introductions and partnerships\n- Explore South Asian trade opportunities\n\nKey Discussion Areas\n\nTrade and Commerce\n- Current bilateral trade volume and trends\n- High-demand products and sectors\n- Export opportunities for Nigerian businesses\n- Pakistani manufacturing and export capabilities\n\nBusiness Facilitation\n- Visa and travel procedures for delegations\n- Government support for business missions\n- Trade finance and banking relationships\n- Regulatory framework and compliance\n\nIndustry Opportunities\n\nPakistani Strengths\n- Textile and garment manufacturing excellence\n- Leather goods and footwear production\n- Sports equipment and manufacturing\n- Pharmaceutical and chemical industries\n- Agricultural products and processing\n\nNigerian Market Potential\n- Consumer goods and retail opportunities\n- Agricultural exports and commodities\n- Minerals and raw materials\n- Energy sector partnerships\n\nStrategic Outcomes\n- High Commissioner\'s commitment to supporting business engagement\n- Facilitation of business delegations and visits\n- Introduction to key Pakistani business organizations\n- Information on market entry and business registration\n- Invitation to embassy-hosted business events\n\nThis diplomatic visit broadened KASCOTE\'s international network to include South Asian connections, opening new pathways for members seeking to engage with Pakistani businesses and access South Asian markets. The High Commissioner\'s support provides crucial government backing for sustained business relationships.',
+    imageUrl: 'KASCOTEN IMAGES/visitations/pakistan-ambassador-visit.jpg',
+    category: 'visitations',
+    author: 'KASCOTE International Relations',
+    publishedAt: new Date(2025, 5, 10),
+    readTime: 6,
+    likesCount: getRandomLikes(),
+    tags: ['pakistan', 'high-commissioner', 'south-asia', 'bilateral-trade'],
+    images: [
+      { url: 'KASCOTEN IMAGES/visitations/pakistan-ambassador-visit.jpg', caption: 'KASCOTE delegation with H.E. Major General (Retd) Sohail Ahmad Khan, High Commissioner of Pakistan' }
+    ]
+  },
+  {
+    id: '18',
+    title: 'Strategic Visitation to Kura Brothers Nigeria Limited',
+    excerpt: 'Under the leadership of Mr Fahmi Aris Inaya, ChargÃ© d\'Affaires of the Indonesian Embassy, KASCOTE visited Kura Brothers Nigeria Limited to explore agribusiness partnerships and rice milling operations.',
+    content: 'KASCOTE leadership, under the distinguished leadership of Mr Fahmi Aris Inaya, ChargÃ© d\'Affaires of the Indonesian Embassy, conducted a strategic visitation to Kura Brothers Nigeria Limited, a prominent player in Nigeria\'s agribusiness and food processing sector. This visit highlighted the importance of local industry development and presented opportunities for international partnerships in the critical food production chain.\n\nAbout Kura Brothers Nigeria Limited\n\nCompany Overview\n- Industry: Agribusiness and food processing, specializing in rice milling\n- Location: Kura, Kano State, Nigeria\n- Leadership: Alh Tasiu Ilu Kura, CEO\n- Sector: Food production and agricultural commodities\n- Market Role: Contributing to Nigeria\'s food sufficiency goals\n\nKey Operations\n\nRice Milling Excellence\n- State-of-the-art rice mill operations in Kura\n- Processing capacity for local and regional markets\n- Quality standards aligned with national food safety regulations\n- Employment of skilled local workforce\n- Consistent supply chain from farmers to consumers\n\nBusiness Partnerships\n- Member of Kano Chamber of Commerce, Industry, Mines and Agriculture (KACCIMA)\n- Partnership with Millers for Nutrition\n- Supplier relationships with local farmers\n- Distribution network across Northern Nigeria\n\nContribution to National Development\n\nFood Security\n- Direct contribution to Nigeria\'s food sufficiency goals\n- Supporting the federal government\'s border closure policies to encourage local industry\n- Providing staple food products to millions of Nigerians\n- Establishing local supply chains for rice production\n\nEconomic Impact\n- Creation of local employment opportunities\n- Support for local farming communities\n- Added value to agricultural commodities\n- Strengthening Nigeria\'s agricultural sector competitiveness\n\nVisitation Highlights\n\nFacility Tour\n- Inspection of modern rice milling equipment\n- Review of production processes and quality control\n- Understanding of supply chain management\n- Assessment of capacity for increased production\n\nBusiness Discussions\n- Exploration of international partnership opportunities\n- Discussion of export possibilities\n- Review of quality standards and certifications\n- Potential collaboration with Indonesian agribusiness entities\n\nStrategic Outcomes\n\n1. Partnership Opportunities\n- Identified potential for Indonesian agribusiness collaboration\n- Discussed technology transfer and best practices\n- Explored export market access to Southeast Asia\n- Preliminary discussion of quality standards alignment\n\n2. Market Expansion\n- Opportunity to access international markets through embassy networks\n- Potential for joint ventures with Indonesian partners\n- Discussion of scaling operations for regional distribution\n- Exploration of agricultural commodity trading opportunities\n\n3. Government and International Support\n- Embassy recognition of Kura Brothers as key agricultural player\n- Support for international market access\n- Facilitation of trade relationships\n- Potential for government-backed export initiatives\n\nSignificance of the Visit\n\nThis visitation underscores KASCOTE\'s commitment to supporting all sectors of Kano\'s economy, particularly the critical agribusiness sector. By bringing international partners to witness the capabilities and quality of local operators like Kura Brothers Nigeria Limited, we facilitate:\n\n- Direct connections between local producers and international markets\n- Technology and knowledge transfer opportunities\n- Government-level support for business expansion\n- Recognition of Nigeria\'s agricultural capabilities on the international stage\n\nKura Brothers Nigeria Limited exemplifies how local Nigerian companies, with proper support and international partnerships, can contribute significantly to national food security while creating employment and economic growth. This visit represents the intersection of local industry excellence and international business opportunity.\n\nFuture Collaboration\n\nThe success of this visitation has opened doors for:\n- Regular business engagement between KASCOTE and Kura Brothers\n- Potential trade missions involving the company\n- Connection with international agribusiness entities\n- Support for the company\'s expansion and modernization plans\n- Showcase of Nigerian agricultural excellence to the world',
+    imageUrl: 'KASCOTEN IMAGES/kura-brothers-visit/kura-brothers-1.jpg',
+    category: 'visitations',
+    author: 'KASCOTE Leadership',
+    publishedAt: { seconds: Math.floor(new Date(2025, 11, 20).getTime() / 1000) },
+    readTime: 8,
+    likesCount: getRandomLikes(),
+    tags: ['agribusiness', 'rice-milling', 'kura', 'food-production', 'partnership', 'local-industry'],
+    images: [
+      { url: 'KASCOTEN IMAGES/kura-brothers-visit/kura-brothers-1.jpg', caption: 'KASCOTE delegation touring Kura Brothers Nigeria Limited rice mill facility' },
+      { url: 'KASCOTEN IMAGES/kura-brothers-visit/kura-brothers-2.jpg', caption: 'Mr Fahmi Aris Inaya and KASCOTE leadership with Kura Brothers management and CEO Alh Tasiu Ilu Kura' }

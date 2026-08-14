@@ -69,7 +69,7 @@
   padding: 2rem 0;
   border-bottom: 2px solid #ddd;
   position: sticky;
-  top: 60px;
+  top: -20px;
   z-index: 100;
 }
 
@@ -735,5 +735,27 @@
 
   .controls-container {
     padding: 0 1rem;
+  }
+}
+
+/* Mobile/Phone Carousel Button Adjustments */
+@media (max-width: 600px) {
+  #carouselControlsContainer {
+    padding: 1rem 0.5rem !important;
+  }
+
+  .carousel-btn {
+    padding: 0.5rem 0.8rem !important;
+    font-size: 0.8rem !important;
+  }
+
+  .page-info {
+    font-size: 0.8rem !important;
+    min-width: auto !important;
+  }
+
+  .carousel-controls-container {
+    margin-top: 2rem !important;
+    padding-top: 1rem !important;
   }
 }

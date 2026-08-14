@@ -13,6 +13,7 @@ const newsGrid = document.getElementById('newsGrid');
 const searchInput = document.getElementById('searchInput');
 const filterButtons = document.querySelectorAll('.filter-btn');
 const noResults = document.getElementById('noResults');
+const carouselControlsContainer = document.getElementById('carouselControlsContainer');
 const newsletterForm = document.getElementById('newsletterForm');
 const newsletterMessage = document.getElementById('newsletterMessage');
 const commentsModal = document.getElementById('commentsModal');
@@ -23,6 +24,7 @@ const commentsList = document.getElementById('commentsList');
 
 let allArticles = [];
 let currentFilter = 'all';
+let currentSort = 'newest';
 let currentArticleId = null;
 let currentPage = 1;
 const articlesPerPage = 12;
@@ -86,122 +88,145 @@ async function loadArticlesFromFirebase() {
 // Load Sample Articles (for demo)
 // ============================
 function loadSampleArticles() {
-  const sampleArticles = [
-    {
-      id: '1',
-      title: 'KASCOTE Strengthens Trade Ties with Indonesia',
-      excerpt: 'KASCOTE proudly represented Nigeria at the prestigious 40th Indonesian Trade Expo 2025, forging new partnerships and trade opportunities for our members in Asia.',
-      content: 'KASCOTE proudly represented Nigeria at the prestigious 40th Indonesian Trade Expo 2025, where Chairman and President Alhaji Hassan Yaro stood shoulder to shoulder with international business leaders. This landmark trade mission showcases Kano\'s commitment to global commerce and entrepreneurship.',
-      imageUrl: 'KASCOTEN IMAGES/indonesian trade expo 2025/Indonesian-trade-expo-25-2.1.jpg',
-      category: 'news',
-      author: 'KASCOTE Communications',
-      publishedAt: new Date(2025, 11, 20),
-      readTime: 5
-    },
-    {
-      id: '2',
-      title: 'Sommet de l\'Elevage: Kano\'s Agricultural Innovation Showcased',
-      excerpt: 'Our delegation participated in the world\'s leading sustainable livestock show in France, showcasing Kano\'s agricultural potential to 120,000+ international visitors.',
-      content: 'In October 2025, KASCOTE attended Sommet de l\'élevage — the world\'s No.1 sustainable livestock and agricultural show in France. This event drew over 120,000 visitors from 90 countries, providing an exceptional platform for Kano\'s traders and farmers to showcase their products and establish international connections.',
-      imageUrl: 'KASCOTEN IMAGES/Sommet de l\'élevage Visit/Sommet de l\'élevage Visit6.jpg',
-      category: 'events',
-      author: 'KASCOTE Leadership',
-      publishedAt: new Date(2025, 9, 15),
-      readTime: 6
-    },
-    {
-      id: '3',
-      title: 'Understanding Global Trade Opportunities for MSMEs',
-      excerpt: 'A comprehensive guide on how small and medium enterprises can leverage international trade missions to expand their market reach.',
-      content: 'Small and medium enterprises (MSMEs) form the backbone of Kano\'s economy. In this article, we explore key strategies for MSMEs to participate in global trade, from preparation to execution. Learn how KASCOTE\'s trade missions create pathways to international markets.',
-      imageUrl: 'KASCOTEN IMAGES/year-2026-new-yaer-flyer.jpeg',
-      category: 'blog',
-      author: 'Business Development Team',
-      publishedAt: new Date(2025, 11, 10),
-      readTime: 7
-    },
-    {
-      id: '4',
-      title: 'New Year 2026: Setting Business Goals for Growth',
-      excerpt: 'As we step into 2026, discover strategies to set ambitious yet achievable business goals and leverage KASCOTE\'s resources for success.',
-      content: 'The new year brings fresh opportunities for Kano\'s business community. Whether you\'re a trader, farmer, or manufacturer, this guide provides actionable strategies for setting 2026 goals. Learn how KASCOTE\'s programs can support your growth journey.',
-      imageUrl: 'KASCOTEN IMAGES/year-2026-new-yaer-flyer.jpeg',
-      category: 'insights',
-      author: 'Strategic Planning Office',
-      publishedAt: new Date(2026, 0, 5),
-      readTime: 8
-    },
-    {
-      id: '5',
-      title: 'KASCOTE Delegation Visits Nigerian Embassy in Indonesia',
-      excerpt: 'A diplomatic mission strengthening bilateral business relations between Nigeria and Indonesia through official government channels.',
-      content: 'As part of their official trade mission to Jakarta, Indonesia, the leadership and members of KASCOTE paid a courtesy visit to the Embassy of the Federal Republic of Nigeria in Indonesia. This diplomatic engagement reinforces our commitment to fostering international business partnerships at the highest levels.',
-      imageUrl: 'KASCOTEN IMAGES/indonesian trade expo 2025/Indonesian-trade-expo-25-8.jpg',
-      category: 'news',
-      author: 'KASCOTE Leadership',
-      publishedAt: new Date(2025, 11, 12),
-      readTime: 4
-    },
-    {
-      id: '6',
-      title: 'Women Entrepreneurs in Kano: Breaking Barriers',
-      excerpt: 'Celebrating the achievements of Kano\'s women entrepreneurs and exploring support programs available through KASCOTE.',
-      content: 'Women entrepreneurs are driving innovation and economic growth in Kano. This article highlights success stories from our female members and discusses resources KASCOTE provides to support women in business, including networking opportunities and mentorship programs.',
-      imageUrl: 'https://res.cloudinary.com/dfvumcrsy/image/upload/v1753270696/kascoten-membership_jeh8uq.jpg',
-      category: 'blog',
-      author: 'Women\'s Business Initiative',
-      publishedAt: new Date(2025, 10, 28),
-      readTime: 6
-    }
-  ];
+  // Use single source of truth from post-detail.js (window.KASCOTE_SAMPLE_ARTICLES)
+  const sampleArticles = window.KASCOTE_SAMPLE_ARTICLES || [];
 
   allArticles = sampleArticles;
-  renderArticles(allArticles);
+  if (sampleArticles.length > 0) {
+    const sorted = applySorting(sampleArticles);
+    renderArticles(sorted);
+  }
 }
 
 // ============================
-// Render Articles with Pagination
+// Render Articles with Carousel Pagination
 // ============================
-function renderArticles(articles) {
+function renderArticles(articles, resetPage = true) {
   if (articles.length === 0) {
     newsGrid.innerHTML = '';
     noResults.style.display = 'flex';
+    carouselControlsContainer.style.display = 'none';
     return;
   }
 
   noResults.style.display = 'none';
+  if (resetPage) {
+    currentPage = 1;
+  }
   
-  // Show only articles for current page
-  const startIndex = 0;
-  const endIndex = articlesPerPage;
-  const paginated = articles.slice(startIndex, endIndex);
+  // Calculate pagination
+  const totalPages = Math.ceil(articles.length / articlesPerPage);
+  const startIndex = (currentPage - 1) * articlesPerPage;
+  const endIndex = startIndex + articlesPerPage;
+  const paginatedArticles = articles.slice(startIndex, endIndex);
   
-  newsGrid.innerHTML = paginated.map(article => createNewsCard(article)).join('');
+  // Render articles in grid
+  newsGrid.innerHTML = paginatedArticles.map(article => createNewsCard(article)).join('');
   attachCardEventListeners();
   
-  // Add pagination info
-  if (articles.length > articlesPerPage) {
-    newsGrid.innerHTML += `
-      <div class="pagination-info" style="grid-column: 1/-1; text-align: center; padding: 2rem 0; color: var(--text-muted);">
-        <p>Showing ${endIndex} of ${articles.length} articles</p>
-        <button class="load-more-btn" id="loadMoreBtn" style="
+  // Show carousel controls if more than one page
+  if (totalPages > 1) {
+    carouselControlsContainer.style.display = 'block';
+    carouselControlsContainer.innerHTML = `
+      <div style="display: flex; justify-content: center; align-items: center; gap: 1rem; flex-wrap: wrap;">
+        <button id="prevBtn" class="carousel-btn prev-btn" style="
           background: var(--kascoten-red);
           color: white;
           border: none;
-          padding: 0.8rem 2rem;
+          padding: 0.6rem 1rem;
           border-radius: 4px;
           cursor: pointer;
           font-weight: 600;
-          margin-top: 1rem;
-        ">Load More</button>
+          font-size: 0.9rem;
+          transition: all 0.3s ease;
+          white-space: nowrap;
+        ">
+          <i class="fas fa-chevron-left"></i> Previous
+        </button>
+        <div class="page-info" style="font-weight: 600; color: var(--text-muted); min-width: auto; text-align: center; font-size: 0.9rem;">
+          Page <span id="currentPageNum">${currentPage}</span> of <span id="totalPageNum">${totalPages}</span>
+        </div>
+        <button id="nextBtn" class="carousel-btn next-btn" style="
+          background: var(--kascoten-red);
+          color: white;
+          border: none;
+          padding: 0.6rem 1rem;
+          border-radius: 4px;
+          cursor: pointer;
+          font-weight: 600;
+          font-size: 0.9rem;
+          transition: all 0.3s ease;
+          white-space: nowrap;
+        ">
+          Next <i class="fas fa-chevron-right"></i>
+        </button>
       </div>
     `;
-    
-    document.getElementById('loadMoreBtn').addEventListener('click', () => {
-      loadMoreArticles(articles);
-    });
+    attachCarouselListeners(articles, totalPages);
+  } else {
+    carouselControlsContainer.style.display = 'none';
   }
 }
+
+// ============================
+// Carousel Navigation Listeners
+// ============================
+function attachCarouselListeners(articles, totalPages) {
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const currentPageNum = document.getElementById('currentPageNum');
+  const totalPageNum = document.getElementById('totalPageNum');
+  
+  if (!prevBtn || !nextBtn) return;
+  
+  const updateButtons = () => {
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === totalPages;
+    
+    if (currentPage === 1) {
+      prevBtn.style.opacity = '0.5';
+      prevBtn.style.cursor = 'not-allowed';
+    } else {
+      prevBtn.style.opacity = '1';
+      prevBtn.style.cursor = 'pointer';
+    }
+    
+    if (currentPage === totalPages) {
+      nextBtn.style.opacity = '0.5';
+      nextBtn.style.cursor = 'not-allowed';
+    } else {
+      nextBtn.style.opacity = '1';
+      nextBtn.style.cursor = 'pointer';
+    }
+    
+    if (currentPageNum) currentPageNum.textContent = currentPage;
+    if (totalPageNum) totalPageNum.textContent = totalPages;
+  };
+  
+  updateButtons();
+  
+  prevBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (currentPage > 1) {
+      currentPage--;
+      renderArticles(articles, false);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+  
+  nextBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (currentPage < totalPages) {
+      currentPage++;
+      renderArticles(articles, false);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+}
+
+
 
 // ============================
 // Create News Card HTML with link to detail page
@@ -238,6 +263,7 @@ function createNewsCard(article) {
           <div class="news-card-actions">
             <button class="card-action-btn like-btn" data-article-id="${article.id}" title="Like this article">
               <i class="far fa-heart"></i>
+              <span style="margin-left: 0.3rem; font-size: 0.9rem;">${article.likesCount || 30}</span>
             </button>
             <button class="card-action-btn comment-btn" data-article-id="${article.id}" title="View comments">
               <i class="far fa-comment"></i>
@@ -272,6 +298,12 @@ function setupEventListeners() {
   filterButtons.forEach(btn => {
     btn.addEventListener('click', handleFilter);
   });
+
+  // Sort dropdown
+  const sortDropdown = document.getElementById('sortDropdown');
+  if (sortDropdown) {
+    sortDropdown.addEventListener('change', handleSort);
+  }
 
   // Newsletter form
   newsletterForm.addEventListener('submit', handleNewsletterSubmit);
@@ -317,7 +349,8 @@ function handleSearch(e) {
     ? filtered 
     : filtered.filter(a => a.category === currentFilter);
 
-  renderArticles(categoryFiltered);
+  const sorted = applySorting(categoryFiltered);
+  renderArticles(sorted);
 }
 
 // ============================
@@ -343,13 +376,74 @@ function handleFilter(e) {
     filtered = filtered.filter(a => a.category === currentFilter);
   }
 
+  filtered = applySorting(filtered);
   renderArticles(filtered);
+}
+
+// ============================
+// Handle Sort
+// ============================
+function handleSort(e) {
+  currentSort = e.target.value;
+  
+  const searchTerm = searchInput.value.toLowerCase();
+  let filtered = allArticles;
+
+  if (searchTerm) {
+    filtered = filtered.filter(article => 
+      article.title.toLowerCase().includes(searchTerm) ||
+      article.excerpt.toLowerCase().includes(searchTerm) ||
+      article.content.toLowerCase().includes(searchTerm)
+    );
+  }
+
+  if (currentFilter !== 'all') {
+    filtered = filtered.filter(a => a.category === currentFilter);
+  }
+
+  filtered = applySorting(filtered);
+  renderArticles(filtered);
+}
+
+// ============================
+// Apply Sorting
+// ============================
+function applySorting(articles) {
+  const sorted = [...articles];
+  
+  // Helper function to convert publishedAt to timestamp
+  const getTimestamp = (publishedAt) => {
+    if (!publishedAt) return 0;
+    if (typeof publishedAt === 'object' && publishedAt.seconds) {
+      return publishedAt.seconds * 1000;
+    }
+    return new Date(publishedAt).getTime();
+  };
+  
+  switch(currentSort) {
+    case 'newest':
+      sorted.sort((a, b) => getTimestamp(b.publishedAt) - getTimestamp(a.publishedAt));
+      break;
+    case 'oldest':
+      sorted.sort((a, b) => getTimestamp(a.publishedAt) - getTimestamp(b.publishedAt));
+      break;
+    case 'alphabetical':
+      sorted.sort((a, b) => a.title.localeCompare(b.title));
+      break;
+    case 'most-liked':
+      sorted.sort((a, b) => (b.likesCount || 0) - (a.likesCount || 0));
+      break;
+    default:
+      sorted.sort((a, b) => getTimestamp(b.publishedAt) - getTimestamp(a.publishedAt));
+  }
+  
+  return sorted;
 }
 
 // ============================
 // Handle Like Article
 // ============================
-async function handleLikeArticle(e) {
+function handleLikeArticle(e) {
   e.preventDefault();
   const btn = e.currentTarget;
   const articleId = btn.dataset.articleId;
@@ -360,22 +454,28 @@ async function handleLikeArticle(e) {
     return;
   }
 
-  try {
-    const likeRef = doc(db, 'articles', articleId, 'likes', currentUser.uid);
-    const likeSnap = await getDoc(likeRef);
+  // Find the article in shared articles
+  const article = window.KASCOTE_SAMPLE_ARTICLES.find(a => a.id === articleId);
+  if (!article) {
+    console.error('Article not found');
+    return;
+  }
 
-    if (likeSnap.exists()) {
-      await deleteDoc(likeRef);
-      btn.classList.remove('liked');
-      btn.innerHTML = '<i class="far fa-heart"></i>';
-    } else {
-      await addDoc(collection(db, 'articles', articleId, 'likes'), {
-        userId: currentUser.uid,
-        createdAt: serverTimestamp()
-      });
+  try {
+    // Toggle like on the article object
+    if (!article.userLiked) {
+      article.likesCount++;
+      article.userLiked = true;
       btn.classList.add('liked');
       btn.innerHTML = '<i class="fas fa-heart"></i>';
+    } else {
+      article.likesCount--;
+      article.userLiked = false;
+      btn.classList.remove('liked');
+      btn.innerHTML = '<i class="far fa-heart"></i>';
     }
+    
+    console.log(`Article ${articleId} likes updated to ${article.likesCount}`);
   } catch (error) {
     console.error('Error liking article:', error);
     alert('Error updating like. Please try again.');
@@ -463,34 +563,6 @@ async function handleCommentSubmit(e) {
 // ============================
 // Handle Read More (removed - now uses direct link)
 // ============================
-
-// ============================
-// Load More Articles
-// ============================
-function loadMoreArticles(articles) {
-  const startIndex = articlesPerPage;
-  const endIndex = startIndex + articlesPerPage;
-  const newArticles = articles.slice(startIndex, endIndex);
-  
-  const paginationInfo = document.querySelector('.pagination-info');
-  
-  newArticles.forEach(article => {
-    const cardHTML = createNewsCard(article);
-    const tempDiv = document.createElement('div');
-    tempDiv.innerHTML = cardHTML;
-    newsGrid.insertBefore(tempDiv.firstChild, paginationInfo);
-  });
-  
-  articlesPerPage += articlesPerPage;
-  
-  if (endIndex >= articles.length) {
-    paginationInfo.remove();
-  } else {
-    paginationInfo.querySelector('p').textContent = `Showing ${endIndex} of ${articles.length} articles`;
-  }
-  
-  attachCardEventListeners();
-}
 
 // ============================
 // Setup Intersection Observer for Lazy Loading

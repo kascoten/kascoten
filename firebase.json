@@ -6,7 +6,10 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
+    "site": "kascoten1",
     "public": ".",
+    "cleanUrls": true,
+    "trailingSlash": false,
     "ignore": [
       "firebase.json",
       "**/.*",

@@ -36,92 +36,10 @@ let currentArticleId = null;
 let currentArticle = null;
 const FIREBASE_TIMEOUT = 300; // 300ms max for Firebase calls
 
-// Sample articles for fallback
-const sampleArticlesForDetail = [
-  {
-    id: '1',
-    title: 'KASCOTE Strengthens Trade Ties with Indonesia',
-    excerpt: 'KASCOTE proudly represented Nigeria at the prestigious 40th Indonesian Trade Expo 2025, forging new partnerships and trade opportunities for our members in Asia.',
-    content: 'KASCOTE proudly represented Nigeria at the prestigious 40th Indonesian Trade Expo 2025, where Chairman and President Alhaji Hassan Yaro stood shoulder to shoulder with international business leaders. This landmark trade mission showcases Kano\'s commitment to global commerce and entrepreneurship.\n\nThe Indonesian Trade Expo brought together over 5,000 exhibitors from 50 countries, making it one of Asia\'s largest trade exhibitions. Our delegation engaged with potential partners in agriculture, manufacturing, and textile industries.\n\nKey achievements from this mission include:\n- Signed partnerships with 3 major Indonesian trading companies\n- Established connections with agricultural exporters for Kano products\n- Explored opportunities for joint ventures in manufacturing\n- Strengthened diplomatic relations through official channels\n\nThis success demonstrates KASCOTE\'s commitment to opening international markets for our members and positioning Kano as a regional trading hub.',
-    imageUrl: 'KASCOTEN IMAGES/indonesian trade expo 2025/Indonesian-trade-expo-25-2.1.jpg',
-    category: 'news',
-    author: 'KASCOTE Communications',
-    publishedAt: { seconds: Math.floor(new Date(2025, 11, 20).getTime() / 1000) },
-    readTime: 5,
-    tags: ['international', 'trade', 'indonesia', 'exports'],
-    images: [
-      { url: 'KASCOTEN IMAGES/indonesian trade expo 2025/Indonesian-trade-expo-25-2.1.jpg', caption: 'KASCOTE delegation at Indonesian Trade Expo 2025' },
-      { url: 'KASCOTEN IMAGES/indonesian trade expo 2025/Indonesian-trade-expo-25-8.jpg', caption: 'Business leaders networking at the expo' }
-    ]
-  },
-  {
-    id: '2',
-    title: 'Sommet de l\'Elevage: Kano\'s Agricultural Innovation Showcased',
-    excerpt: 'Our delegation participated in the world\'s leading sustainable livestock show in France, showcasing Kano\'s agricultural potential to 120,000+ international visitors.',
-    content: 'In October 2025, KASCOTE attended Sommet de l\'élevage — the world\'s No.1 sustainable livestock and agricultural show in France. This event drew over 120,000 visitors from 90 countries, providing an exceptional platform for Kano\'s traders and farmers to showcase their products and establish international connections.\n\nSommet de l\'élevage is the premier global event for the livestock and meat industry. It attracts industry leaders, investors, and decision-makers from across the world. Our participation positioned Kano\'s agricultural sector on the international stage.\n\nOur delegation showcased:\n- Kano\'s quality livestock products\n- Sustainable farming practices\n- Agricultural technology innovations\n- Traditional production methods\n\nNetworking outcomes:\n- Explored export opportunities to European markets\n- Connected with international agricultural investors\n- Learned best practices in sustainable livestock farming\n- Established relationships with major importers\n\nThis participation strengthens Kano\'s position as a leading agricultural hub in Africa.',
-    imageUrl: 'KASCOTEN IMAGES/Sommet de l\'élevage Visit/Sommet de l\'élevage Visit6.jpg',
-    category: 'events',
-    author: 'KASCOTE Leadership',
-    publishedAt: { seconds: Math.floor(new Date(2025, 9, 15).getTime() / 1000) },
-    readTime: 6,
-    tags: ['agriculture', 'livestock', 'france', 'sustainability'],
-    images: [
-      { url: 'KASCOTEN IMAGES/Sommet de l\'élevage Visit/Sommet de l\'élevage Visit6.jpg', caption: 'KASCOTE booth at Sommet de l\'élevage' }
-    ]
-  },
-  {
-    id: '3',
-    title: 'Understanding Global Trade Opportunities for MSMEs',
-    excerpt: 'A comprehensive guide on how small and medium enterprises can leverage international trade missions to expand their market reach.',
-    content: 'Small and medium enterprises (MSMEs) form the backbone of Kano\'s economy. In this article, we explore key strategies for MSMEs to participate in global trade, from preparation to execution. Learn how KASCOTE\'s trade missions create pathways to international markets.\n\nWhy MSMEs Need Global Trade:\n- Access to larger markets\n- Higher profit margins on international sales\n- Technology and knowledge transfer\n- Business network expansion\n- Currency diversification\n\nSteps for MSME Success:\n\n1. Preparation Phase\n- Ensure product quality meets international standards\n- Obtain necessary certifications\n- Build strong company profile\n- Develop marketing materials\n\n2. Trade Mission Selection\n- Choose missions aligned with your industry\n- Register with KASCOTE early\n- Coordinate logistics\n- Prepare product samples\n\n3. During the Mission\n- Network actively\n- Make meaningful connections\n- Explore partnerships\n- Gather market intelligence\n\n4. Follow-up\n- Maintain contact with prospects\n- Develop business proposals\n- Negotiate terms\n- Execute agreements\n\nKASCOTE provides support at every step through our comprehensive trade mission programs. Join us and expand your business globally!',
-    imageUrl: 'KASCOTEN IMAGES/year-2026-new-yaer-flyer.jpeg',
-    category: 'blog',
-    author: 'Business Development Team',
-    publishedAt: { seconds: Math.floor(new Date(2025, 11, 10).getTime() / 1000) },
-    readTime: 7,
-    tags: ['msme', 'trade', 'business', 'guide'],
-    images: []
-  },
-  {
-    id: '4',
-    title: 'New Year 2026: Setting Business Goals for Growth',
-    excerpt: 'As we step into 2026, discover strategies to set ambitious yet achievable business goals and leverage KASCOTE\'s resources for success.',
-    content: 'The new year brings fresh opportunities for Kano\'s business community. Whether you\'re a trader, farmer, or manufacturer, this guide provides actionable strategies for setting 2026 goals. Learn how KASCOTE\'s programs can support your growth journey.\n\nStrategic Goal Setting:\n- Define SMART objectives\n- Align with market trends\n- Assess resources\n- Create action plans\n- Monitor progress\n\nKASCOTE Resources:\n- Trade missions to international markets\n- Business training programs\n- Networking events\n- Policy advocacy\n- Capacity building workshops',
-    imageUrl: 'KASCOTEN IMAGES/year-2026-new-yaer-flyer.jpeg',
-    category: 'insights',
-    author: 'Strategic Planning Office',
-    publishedAt: { seconds: Math.floor(new Date(2026, 0, 5).getTime() / 1000) },
-    readTime: 8,
-    tags: ['goals', 'strategy', 'business'],
-    images: []
-  },
-  {
-    id: '5',
-    title: 'KASCOTE Delegation Visits Nigerian Embassy in Indonesia',
-    excerpt: 'A diplomatic mission strengthening bilateral business relations between Nigeria and Indonesia through official government channels.',
-    content: 'As part of their official trade mission to Jakarta, Indonesia, the leadership and members of KASCOTE paid a courtesy visit to the Embassy of the Federal Republic of Nigeria in Indonesia. This diplomatic engagement reinforces our commitment to fostering international business partnerships at the highest levels.\n\nThe visit facilitated:\n- Official recognition of KASCOTE\'s role in trade\n- Discussion of government support for businesses\n- Exchange of ideas on economic development\n- Strengthening of diplomatic channels\n- Enhanced networking opportunities',
-    imageUrl: 'KASCOTEN IMAGES/indonesian trade expo 2025/Indonesian-trade-expo-25-8.jpg',
-    category: 'news',
-    author: 'KASCOTE Leadership',
-    publishedAt: { seconds: Math.floor(new Date(2025, 11, 12).getTime() / 1000) },
-    readTime: 4,
-    tags: ['diplomacy', 'embassy', 'indonesia'],
-    images: []
-  },
-  {
-    id: '6',
-    title: 'Women Entrepreneurs in Kano: Breaking Barriers',
-    excerpt: 'Celebrating the achievements of Kano\'s women entrepreneurs and exploring support programs available through KASCOTE.',
-    content: 'Women entrepreneurs are driving innovation and economic growth in Kano. This article highlights success stories from our female members and discusses resources KASCOTE provides to support women in business, including networking opportunities and mentorship programs.\n\nSuccess Stories:\n- Female textile exporters breaking into international markets\n- Women agricultural product manufacturers\n- Female technology entrepreneurs\n- Women trade mission leaders\n\nKASCOTE Women\'s Programs:\n- Women entrepreneur networking forum\n- Mentorship and coaching\n- Business training workshops\n- Access to trade missions\n- Financial support guidance\n\nWomen entrepreneurs contribute significantly to Kano\'s economic development and KASCOTE is committed to their success.',
-    imageUrl: 'https://res.cloudinary.com/dfvumcrsy/image/upload/v1753270696/kascoten-membership_jeh8uq.jpg',
-    category: 'blog',
-    author: 'Women\'s Business Initiative',
-    publishedAt: { seconds: Math.floor(new Date(2025, 10, 28).getTime() / 1000) },
-    readTime: 6,
-    tags: ['women', 'entrepreneurs', 'empowerment'],
-    images: []
-  }
-];
+// Article data is now loaded from shared-articles.js
+// (loaded before this script in the HTML file)
+// Backward compatibility alias
+const sampleArticlesForDetail = window.KASCOTE_SAMPLE_ARTICLES;
 
 // ============================
 // Initialize Post Detail Page - Non-blocking
@@ -314,14 +232,20 @@ function renderImageGallery(images) {
   if (!images || images.length === 0) return;
 
   gallerySection.style.display = 'block';
-  galleryDiv.innerHTML = images.map((img, index) => `
+  galleryDiv.innerHTML = images.map((img, index) => {
+    const isVideo = /\.(mp4|webm|mov|avi|mkv)$/i.test(img.url);
+    return `
     <div class="gallery-image-item" data-index="${index}">
-      <img src="${img.url}" alt="${img.caption || 'Gallery image'}" loading="lazy">
+      ${isVideo ? 
+        `<video src="${img.url}" controls loading="lazy" style="width: 100%; height: 100%; object-fit: cover;"></video>` :
+        `<img src="${img.url}" alt="${img.caption || 'Gallery item'}" loading="lazy">`
+      }
       <div class="gallery-image-overlay">
         <i class="fas fa-expand"></i>
       </div>
     </div>
-  `).join('');
+  `;
+  }).join('');
 
   // Add click handlers for lightbox
   galleryDiv.querySelectorAll('.gallery-image-item').forEach(item => {
@@ -336,13 +260,18 @@ function renderImageGallery(images) {
 // Open Image Lightbox
 // ============================
 function openImageLightbox(images, startIndex) {
+  const isVideo = /\.(mp4|webm|mov|avi|mkv)$/i.test(images[startIndex].url);
+  
   const lightbox = document.createElement('div');
   lightbox.className = 'lightbox-overlay';
   lightbox.innerHTML = `
     <div class="lightbox-content">
       <button class="lightbox-close">&times;</button>
       <button class="lightbox-prev">&lt;</button>
-      <img class="lightbox-image" src="${images[startIndex].url}" alt="Full size">
+      ${isVideo ? 
+        `<video class="lightbox-video" src="${images[startIndex].url}" controls style="max-width: 100%; max-height: 80vh; object-fit: contain;"></video>` :
+        `<img class="lightbox-image" src="${images[startIndex].url}" alt="Full size">`
+      }
       <button class="lightbox-next">&gt;</button>
       <div class="lightbox-caption">${images[startIndex].caption || ''}</div>
     </div>
@@ -359,16 +288,41 @@ function openImageLightbox(images, startIndex) {
 
   lightbox.querySelector('.lightbox-prev').addEventListener('click', () => {
     currentIndex = (currentIndex - 1 + images.length) % images.length;
-    updateLightboxImage();
+    updateLightboxMedia();
   });
 
   lightbox.querySelector('.lightbox-next').addEventListener('click', () => {
     currentIndex = (currentIndex + 1) % images.length;
-    updateLightboxImage();
+    updateLightboxMedia();
   });
 
-  function updateLightboxImage() {
-    lightbox.querySelector('.lightbox-image').src = images[currentIndex].url;
+  function updateLightboxMedia() {
+    const isCurrentVideo = /\.(mp4|webm|mov|avi|mkv)$/i.test(images[currentIndex].url);
+    const mediaContainer = lightbox.querySelector('.lightbox-content');
+    const oldMedia = mediaContainer.querySelector('.lightbox-image, .lightbox-video');
+    
+    if (oldMedia) oldMedia.remove();
+    
+    const newMedia = isCurrentVideo ? 
+      document.createElement('video') : 
+      document.createElement('img');
+    
+    if (isCurrentVideo) {
+      newMedia.className = 'lightbox-video';
+      newMedia.src = images[currentIndex].url;
+      newMedia.controls = true;
+      newMedia.style.cssText = 'max-width: 100%; max-height: 80vh; object-fit: contain;';
+    } else {
+      newMedia.className = 'lightbox-image';
+      newMedia.src = images[currentIndex].url;
+      newMedia.alt = 'Full size';
+      newMedia.style.cssText = 'max-width: 100%; max-height: 80vh; object-fit: contain;';
+    }
+    
+    // Insert before caption
+    const caption = mediaContainer.querySelector('.lightbox-caption');
+    mediaContainer.insertBefore(newMedia, caption);
+    
     lightbox.querySelector('.lightbox-caption').textContent = images[currentIndex].caption || '';
   }
 }

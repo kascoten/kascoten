@@ -103,9 +103,12 @@
       <div class="filter-tags">
         <button class="filter-btn active" data-filter="all">All</button>
         <button class="filter-btn" data-filter="news">News</button>
-        <button class="filter-btn" data-filter="blog">Blog</button>
-        <button class="filter-btn" data-filter="events">Events</button>
-        <button class="filter-btn" data-filter="insights">Insights</button>
+        <button class="filter-btn" data-filter="visitations">Visitations</button>
+        <button class="filter-btn" data-filter="b2b">B2B Meetings</button>
+        <button class="filter-btn" data-filter="annual-events">Annual Events</button>
+        <button class="filter-btn" data-filter="local-exhibitions">Local Exhibitions</button>
+        <button class="filter-btn" data-filter="international-exhibitions">International Exhibitions</button>
+         <button class="filter-btn" data-filter="trade-missions">Trade Missions</button>
       </div>
     </div>
   </section>
@@ -119,6 +122,10 @@
           <i class="fas fa-spinner fa-spin"></i>
           <p>Loading articles...</p>
         </div>
+      </div>
+      <!-- Carousel Controls -->
+      <div class="carousel-controls-container" id="carouselControlsContainer" style="display: none; margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #eee;">
+        <!-- Controls will be inserted here by JavaScript -->
       </div>
     </div>
   </section>
@@ -220,6 +227,9 @@
       </div>
     </div>
   </div>
+
+  <!-- Shared Article Data -->
+  <script src="src/shared-articles.js"></script>
 
   <!-- Firebase Imports -->
   <script type="module">
