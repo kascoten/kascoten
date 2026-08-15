@@ -417,7 +417,10 @@ function applySorting(articles) {
     if (typeof publishedAt === 'object' && publishedAt.seconds) {
       return publishedAt.seconds * 1000;
     }
-    return new Date(publishedAt).getTime();
+    if (publishedAt instanceof Date) {
+      return publishedAt.getTime();
+    }
+    return new Date(publishedAt).getTime() || 0;
   };
   
   switch(currentSort) {

@@ -79,11 +79,26 @@ async function loadRecentNewsOnHomepage() {
   }
 }
 
+// ============================
+// Helper to parse publishedAt timestamp
+// ============================
+function getArticleTimestamp(publishedAt) {
+  if (!publishedAt) return 0;
+  if (typeof publishedAt === 'object' && publishedAt.seconds) {
+    return publishedAt.seconds * 1000;
+  }
+  if (publishedAt instanceof Date) {
+    return publishedAt.getTime();
+  }
+  return new Date(publishedAt).getTime() || 0;
+}
+
 function loadSampleArticlesOnHomepage() {
   const sampleArticles = window.KASCOTE_SAMPLE_ARTICLES || [];
-  allHomepageArticles = sampleArticles;
+  // Sort sample articles newest first
+  allHomepageArticles = [...sampleArticles].sort((a, b) => getArticleTimestamp(b.publishedAt) - getArticleTimestamp(a.publishedAt));
   setupHomepageFilters();
-  renderHomepageArticles(sampleArticles);
+  renderHomepageArticles(allHomepageArticles);
 }
 
 function renderRecentNewsCards(articles) {
@@ -91,14 +106,15 @@ function renderRecentNewsCards(articles) {
 }
 
 function createRecentNewsCard(article) {
-  const date = new Date(article.publishedAt.seconds ? article.publishedAt.seconds * 1000 : article.publishedAt);
+  const timestamp = getArticleTimestamp(article.publishedAt);
+  const date = new Date(timestamp);
   const formattedDate = date.toLocaleDateString('en-US', { 
     year: 'numeric', 
     month: 'short', 
     day: 'numeric' 
   });
 
-  const categoryLabel = article.category.charAt(0).toUpperCase() + article.category.slice(1);
+  const categoryLabel = (article.category || 'General').charAt(0).toUpperCase() + (article.category || 'General').slice(1);
 
   return `
     <a href="post-detail.html?id=${article.id}" class="recent-news-card">
@@ -134,14 +150,17 @@ function setupHomepageFilters() {
 }
 
 // ============================
-// Render Homepage Articles with Filtering
+// Render Homepage Articles with Filtering & Sorting
 // ============================
 function renderHomepageArticles(articles) {
-  let filteredArticles = articles;
+  let filteredArticles = [...articles];
   
   if (currentHomepageFilter !== 'all') {
-    filteredArticles = articles.filter(article => article.category === currentHomepageFilter);
+    filteredArticles = filteredArticles.filter(article => article.category === currentHomepageFilter);
   }
+  
+  // Sort newest first
+  filteredArticles.sort((a, b) => getArticleTimestamp(b.publishedAt) - getArticleTimestamp(a.publishedAt));
   
   // Show first 6 articles
   const displayArticles = filteredArticles.slice(0, 6);

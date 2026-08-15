@@ -1048,5 +1048,125 @@ window.KASCOTE_SAMPLE_ARTICLES = [
     images: [
       { url: 'KASCOTEN IMAGES/dan-agundi-flyover.jpg', caption: 'Dan\'agundi Flyover & Underpass - Strategic commercial interchange' }
     ]
+  },
+  {
+    id: '52',
+    title: 'Indonesia Expo Kano 2026: Advancing Trade, Building Collaboration',
+    excerpt: 'Indonesia Expo Kano 2026 was a three-day bilateral trade exhibition held from July 2 to July 4, 2026, at The Afficent Events Center on Sultan Road in Kano, organized by KASCOTE in collaboration with the Embassy of the Republic of Indonesia in Abuja.',
+    content: 'Indonesia Expo Kano 2026 was a three-day bilateral trade exhibition successfully held from July 2 to July 4, 2026, at The Afficent Events Center on Sultan Road in Kano, Nigeria.\n\nOrganized by KASCOTE in collaboration with the Embassy of the Republic of Indonesia in Abuja, the event operated under the theme “Advancing Trade, Building Collaboration” to strengthen economic partnerships and investment ties between Indonesia, Nigeria, and the broader West African region.\n\nKey Details & Structure:\n\nParticipating Companies:\nThe expo featured 64 Indonesian companies split into three main categories: those expanding an already established market presence in Nigeria, companies that sent products and funds to showcase, and companies whose representatives physically traveled directly from Indonesia to secure new business partners.\n\nLocal Involvement:\nVolunteer students from Bayero University Kano (BUK) served as official exhibition officers, bridging communication between Indonesian vendors and local northern Nigerian visitors.\n\nShowcased Sectors:\nFeatured goods spanned major industries including Food & Beverages (such as Supreme Noodles / Primera Food Limited), Health & Beauty, Fashion & Accessories, Manufacturing, Agriculture, Electronics, Household Goods, and Tourism.\n\nProgram Elements:\nThe agenda offered daily business-to-business (B2B) networking, commercial pitches, market inspections, gastro-diplomacy culinary sessions, and live Indonesian cultural dance performances.\n\nUpcoming Bilateral Events:\nFor ongoing bilateral engagement, the Nigerian Indonesian Chamber of Commerce and Industry is hosting the 5th Edition of the Nigerian Indonesian Investment and Trade Forum (NIITF 2026) in Jakarta on October 20, 2026, alongside the massive global Trade Expo Indonesia 2026 happening at ICE BSD from October 14 to October 18, 2026.',
+    imageUrl: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/expo.jpeg',
+    category: 'trade-missions',
+    author: 'KASCOTE International Relations',
+    publishedAt: new Date(2026, 6, 4),
+    readTime: 6,
+    likesCount: getRandomLikes(),
+    tags: ['indonesia-expo-kano-2026', 'trade-expo', 'b2b', 'indonesia', 'abuja-embassy', 'kano'],
+    images: [
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/expo.jpeg', caption: 'Indonesia Expo Kano 2026 - Main Exhibition Floor' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/1.jpeg', caption: 'Expo 2026 Delegate Sessions & Opening' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/2.jpeg', caption: 'B2B Trade Discussions & Matchmaking' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/3.jpeg', caption: 'Product Exhibitions and Business Networking' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/4.jpeg', caption: 'KASCOTE Leadership & Dignitaries at Indonesia Expo' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/5.jpeg', caption: 'Commercial Partnership & Distributor Talks' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/6.jpeg', caption: 'Trade Expo Exhibition Hall Activities' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/7.jpeg', caption: 'Exhibitor Showcase and Presentations' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/8.jpeg', caption: 'Bilateral Commerce Negotiations' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/9.jpeg', caption: 'International Delegates & Business Exchange' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/10.jpeg', caption: 'Live Product Demonstrations' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/11.jpeg', caption: 'High-Level Business & Trade Summit' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/12.jpeg', caption: 'Exhibition Highlights & Displays' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/13.jpeg', caption: 'KASCOTE Members Engaging Indonesian Vendors' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/14.jpeg', caption: 'Strategic Collaboration & Investment Talks' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/16.jpeg', caption: 'Trade Agreements & Consultations' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/17.jpeg', caption: 'B2B Networking Gathering' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/18.jpeg', caption: 'Industrial & Consumer Goods Showcase' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/19.jpeg', caption: 'Trade Delegation Engagement' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/20.jpeg', caption: 'Expo Presentations & Opening Addresses' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/21.jpeg', caption: 'Delegation Group Showcase' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/22.jpeg', caption: 'Commercial Forum Activities' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/23.jpeg', caption: 'Partnership Consultations' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/24.jpeg', caption: 'Exhibition Hall Discussions' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/25.jpeg', caption: 'KASCOTE Entrepreneurial Hub' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/26.jpeg', caption: 'Global Trade Insights & B2B Meetings' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/27.jpeg', caption: 'Business Matchmaking Sessions' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/28.jpeg', caption: 'Enterprise Exhibition Showcase' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/29.jpeg', caption: 'International Trade Network' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/30.jpeg', caption: 'Closing Ceremony & Partnership Highlights' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/31.jpeg', caption: 'Expo 2026 Event Highlights' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/32.jpeg', caption: 'Delegates Group Photo at The Afficent' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/33.mp4', caption: 'Indonesia Expo Kano 2026 Video Highlights Part 1' },
+      { url: 'KASCOTEN IMAGES/2026/indonesia-kano-expo26/34.mp4', caption: 'Indonesia Expo Kano 2026 Video Highlights Part 2' }
+    ]
+  },
+  {
+    id: '53',
+    title: 'KASCOTE Delegation Attends IFSA Africa 2026 in Tunis, Tunisia',
+    excerpt: 'KASCOTE attended IFSA Africa 2026 (International Food Show Africa) from June 9 to 11, 2026, at the Le Kram Exhibition and International Trade Center in Tunis, Tunisia, unlocking major AfCFTA food and agro-trade corridors.',
+    content: 'KASCOTE proudly attended with its official delegation IFSA Africa 2026 (the International Food Show Africa), a major food, beverage, and hospitality trade exhibition that took place from June 9 to June 11, 2026, at the Le Kram Exhibition and International Trade Center in Tunis, Tunisia.\n\nAs a premier commercial hub for the North African and Mediterranean regions, the event brought together international suppliers, African importers, distributors, retailers, and hospitality industry professionals.\n\nKey Event Highlights:\n\nExhibits:\nA massive showcase featuring culinary products, grocery items, dairy, frozen foods, organic products, food processing machinery, and hospitality equipment.\n\nCarthage International Chefs Cup:\nA major concurrent culinary competition drawing international culinary juries and talent.\n\nSpecialized Competitions:\nFeatured events like the Carthage Pizza Cup alongside live cooking demonstrations.\n\nResearch and Innovation:\nOrganizations like the SEEDS project presented sustainable agricultural innovations, including a new healthy Tunisian prototype formulation for couscous using ancient grains.\n\nDiplomatic and Trade Networking:\nThe trade show served as a strategic platform for leveraging trade opportunities under the African Continental Free Trade Area (AfCFTA) framework, receiving high-profile delegations including visits from the Tunisian Minister of Trade and the Saudi Exports Development Authority.\n\nKASCOTE’s participation establishes pivotal market channels for Kano agricultural commodities, food processing partnerships, and cross-border commercial links across North Africa and the Mediterranean.',
+    imageUrl: 'KASCOTEN IMAGES/2026/ifsa/ifsa.jpeg',
+    category: 'events',
+    author: 'KASCOTE Trade & Agriculture Delegation',
+    publishedAt: new Date(2026, 5, 11),
+    readTime: 5,
+    likesCount: getRandomLikes(),
+    tags: ['ifsa-africa-2026', 'food-show', 'tunisia', 'agriculture', 'afcfta', 'agro-export'],
+    images: [
+      { url: 'KASCOTEN IMAGES/2026/ifsa/ifsa.jpeg', caption: 'KASCOTE Delegation at IFSA Africa 2026 - Le Kram Exhibition Center Tunis' },
+      { url: 'KASCOTEN IMAGES/2026/ifsa/ifsa1.jpeg', caption: 'KASCOTE Delegates Engaging in Agro-Trade Consultations at IFSA Africa' },
+      { url: 'KASCOTEN IMAGES/2026/ifsa/ifsa2.jpeg', caption: 'Culinary, Food Processing & Trade Showcase at IFSA Africa 2026' }
+    ]
+  },
+  {
+    id: '54',
+    title: 'KASCOTE Strategic Visit to the Saudi Exports Development Authority',
+    excerpt: 'KASCOTE leadership conducted a high-level strategic visit to the Saudi Exports Development Authority (Saudi Exports) to establish bilateral trade, export facilitation, and supply chain integration.',
+    content: 'KASCOTE leadership and trade delegation engaged in a high-level strategic visit to the Saudi Exports Development Authority (Saudi Exports). This engagement focused on deepening commercial ties, establishing export-import facilitation mechanisms, and unlocking mutual market access between Northern Nigeria and Saudi Arabia.\n\nStrategic Focus Areas:\n\nBilateral Export-Import Facilitation:\nExploring structured trade procedures, customs collaboration, and reciprocal trade channels connecting Kano traders with leading Saudi exporters and manufacturers.\n\nCommercial Partnerships & Supply Chains:\nCreating direct linkages for food commodities, agro-allied products, industrial materials, and consumer goods under Saudi Vision 2030 and the African Continental Free Trade Area (AfCFTA).\n\nInvestment & Joint Ventures:\nIdentifying co-investment opportunities in trade logistics hubs, storage infrastructure, and cross-border distribution channels.\n\nThis strategic engagement positions KASCOTE members for accelerated trade growth, direct distributor agreements, and expanded commercial presence across the Gulf region.',
+    imageUrl: 'KASCOTEN IMAGES/2026/saudi/saudi.jpeg',
+    category: 'trade-missions',
+    author: 'KASCOTE Trade Mission Directorate',
+    publishedAt: new Date(2026, 5, 12),
+    readTime: 4,
+    likesCount: getRandomLikes(),
+    tags: ['saudi-exports', 'trade-mission', 'saudi-arabia', 'b2b', 'afcfta', 'investment'],
+    images: [
+      { url: 'KASCOTEN IMAGES/2026/saudi/saudi.jpeg', caption: 'KASCOTE Leadership & Delegation Visiting Saudi Exports Development Authority' },
+      { url: 'KASCOTEN IMAGES/2026/saudi/saudi.mp4', caption: 'Saudi Exports Development Authority Strategic Meeting Video' },
+      { url: 'KASCOTEN IMAGES/2026/saudi/saudi1.mp4', caption: 'Bilateral Trade & Investment Discussion Video' }
+    ]
+  },
+  {
+    id: '55',
+    title: 'Petroafrica, Green Africa & Africa Big 5 Joint Exhibitions 2026 in Tunis',
+    excerpt: 'KASCOTE attended the Petroafrica, Green Africa, and Africa Big 5 joint exhibitions from June 16 to 19, 2026, at El Kram Expo Center in Tunis, exploring energy solutions bridging low-carbon hydrocarbons, solar power, and green technologies.',
+    content: 'KASCOTE delegates attended the Petroafrica, Green Africa, and Africa Big 5 joint exhibitions, which took place from June 16 to 19, 2026, at the El Kram Expo Center in Tunis, Tunisia.\n\nThe integrated event focused on a dual vision for the continent\'s energy sector, bridging traditional oil and gas developments with green hydrogen, solar power, and circular economy models.\n\nEvent Overview & Key Highlights:\n\nDates & Location:\nJune 16–19, 2026, at the El Kram Exhibition Center, Tunis, Tunisia.\n\nCore Focus:\nTwo combined exhibitions featuring low-carbon hydrocarbons alongside clean energy solutions like solar power and green hydrogen.\n\nActivities & Technical Conferences:\nTechnical conferences addressing energy transition, offshore operations, industry networking, and exhibitions by regional and international energy service companies.\n\nSustainable Commercial Solutions:\nKASCOTE’s participation focused on solar power technology transfer, industrial energy solutions, and clean power adoption to lower operational costs for Kano manufacturers, agro-processors, and commercial markets.\n\nThis event strengthens KASCOTE’s mission to drive green technology adoption and sustainable energy resilience for Nigerian businesses.',
+    imageUrl: 'KASCOTEN IMAGES/2026/tunis-solar/tunis-solar1.jpeg',
+    category: 'insights',
+    author: 'KASCOTE Energy & Sustainability Desk',
+    publishedAt: new Date(2026, 5, 19),
+    readTime: 5,
+    likesCount: getRandomLikes(),
+    tags: ['petroafrica', 'green-africa', 'solar-energy', 'tunisia', 'clean-tech', 'energy-transition'],
+    images: [
+      { url: 'KASCOTEN IMAGES/2026/tunis-solar/tunis-solar1.jpeg', caption: 'Petroafrica & Green Africa Joint Exhibitions 2026 - El Kram Center Tunis' },
+      { url: 'KASCOTEN IMAGES/2026/tunis-solar/tunis-solar.mp4', caption: 'Solar Energy & Green Power Exhibition Video Highlights' }
+    ]
+  },
+  {
+    id: '56',
+    title: 'KASCOTE President Meets with President of the Tunisia Chamber of Commerce',
+    excerpt: 'During an official bilateral trade mission to Tunisia, KASCOTE President Alhaji Hassan Yaro held high-level discussions with the President of the Tunisia Chamber of Commerce to advance Nigeria-Tunisia trade and chamber partnerships.',
+    content: 'During an official trade mission to Tunisia, KASCOTE President Alhaji Hassan Yaro held a landmark bilateral meeting with the President of the Tunisia Chamber of Commerce.\n\nThis high-profile engagement focused on cementing direct chamber-to-chamber collaboration, expanding trade corridors between Nigeria and Tunisia, and establishing direct business channels for KASCOTE members.\n\nKey Strategic Highlights:\n\nChamber Collaboration & Trade Facilitation:\nBuilding an institutional partnership between KASCOTE and the Tunisia Chamber of Commerce to simplify trade procedures, verify business partners, and co-organize targeted B2B matchmaking forums.\n\nCross-Border Trade Opportunities:\nDeepening commerce across vital sectors including agro-commodities, food processing machinery, pharmaceuticals, textiles, building materials, and renewable energy technologies.\n\nLeveraging AfCFTA:\nCapitalizing on the African Continental Free Trade Area (AfCFTA) framework to lower tariffs, ease logistics, and create direct North-West African commercial routes.\n\nReciprocal Delegations:\nAgreeing on reciprocal trade missions and permanent consultation channels to support Kano and Tunisian entrepreneurs in establishing joint ventures and market presence.\n\nThis historic meeting marks a substantial stride forward in connecting Kano’s business leaders with North African markets.',
+    imageUrl: 'KASCOTEN IMAGES/2026/tunisia/tunisia3.jpeg',
+    category: 'b2b',
+    author: 'KASCOTE Presidency & Bilateral Affairs',
+    publishedAt: new Date(2026, 5, 10),
+    readTime: 5,
+    likesCount: getRandomLikes(),
+    tags: ['tunisia-chamber-of-commerce', 'b2b', 'trade-mission', 'alhajihassanyaro', 'afcfta', 'tunisia'],
+    images: [
+      { url: 'KASCOTEN IMAGES/2026/tunisia/tunisia3.jpeg', caption: 'KASCOTE President Alhaji Hassan Yaro with the President of the Tunisia Chamber of Commerce' },
+      { url: 'KASCOTEN IMAGES/2026/tunisia/tunisia.jpeg', caption: 'Tunisia-Nigeria Bilateral Trade Delegation & Meetings' },
+      { url: 'KASCOTEN IMAGES/2026/tunisia/tunisia.mp4', caption: 'Tunisia Bilateral Trade Summit Video Highlights' }
+    ]
   }
 ];
