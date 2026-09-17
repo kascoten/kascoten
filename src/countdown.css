@@ -1,0 +1,512 @@
+/* ============================================================
+   KASCOTE — Event Countdown Section
+   File: src/countdown.css
+   ============================================================ */
+
+/* ── Section wrapper ── */
+.events-countdown-section {
+  background: linear-gradient(160deg, #030f07 0%, #061a10 60%, #082415 100%);
+  width: 100%;
+  padding: 4rem 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ambient glow orbs */
+.events-countdown-section::before,
+.events-countdown-section::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+.events-countdown-section::before {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(6, 64, 43, 0.5) 0%, transparent 70%);
+  top: -100px;
+  left: -80px;
+}
+.events-countdown-section::after {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 38, 38, 0.22) 0%, transparent 70%);
+  bottom: -80px;
+  right: 5%;
+}
+
+/* ── Section header ── */
+.events-countdown-header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 1.5rem 2.5rem;
+}
+
+.events-countdown-title {
+  font-family: 'Alegreya SC', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 40px rgba(6, 120, 70, 0.4);
+  margin-bottom: 0.5rem;
+}
+
+.events-countdown-subtitle {
+  font-family: 'Alegreya', serif;
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  color: rgba(235, 255, 240, 0.92);
+  font-style: italic;
+}
+
+/* ── Scroll track — mobile: horizontal snap ── */
+.events-scroll-track {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 1px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.5rem 1.5rem 1.8rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 40, 40, 0.6) transparent;
+}
+.events-scroll-track::-webkit-scrollbar { height: 4px; }
+.events-scroll-track::-webkit-scrollbar-track { background: transparent; }
+.events-scroll-track::-webkit-scrollbar-thumb {
+  background: rgba(255, 40, 40, 0.75);
+}
+
+/* ── Empty state ── */
+.events-empty-state {
+  width: 100%;
+  text-align: center;
+  color: rgba(200, 230, 210, 0.45);
+  font-family: 'Alegreya', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  padding: 2.5rem 0;
+}
+
+/* ── Event card — mobile base ── */
+.event-card {
+  scroll-snap-align: start;
+  flex: 0 0 310px;
+  min-width: 290px;
+  max-width: 330px;
+  border-radius: 0;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+.event-card:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,0.55), 0 0 20px rgba(255, 38, 38, 0.28);
+  border-color: rgba(255, 38, 38, 0.45);
+}
+.event-card.ec-ended {
+  opacity: 0.5;
+  filter: grayscale(0.5);
+}
+.event-card.ec-ended:hover {
+  opacity: 0.7;
+  filter: grayscale(0.25);
+}
+
+/* ── Card media ── */
+.event-card-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #060f0a;
+  flex-shrink: 0;
+}
+.event-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.55s ease;
+}
+.event-card:hover .event-card-media img { transform: scale(1.06); }
+.event-card-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(3,15,7,0.45) 100%);
+  pointer-events: none;
+}
+
+/* ── Category badge ── */
+.event-category-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: #e61818;
+  color: #fff;
+  font-family: 'Alegreya SC', serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 4px 11px;
+  border-radius: 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ── Status badges ── */
+.event-status-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  font-family: 'Alegreya SC', serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  padding: 4px 10px;
+  border-radius: 0;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.event-status-badge.ec-badge-live {
+  background: rgba(230, 24, 24, 0.95);
+  color: #fff;
+  animation: ec-pulse-badge 1.8s ease-in-out infinite;
+}
+.event-status-badge.ec-badge-ended {
+  background: rgba(60, 60, 60, 0.9);
+  color: #bbb;
+}
+.event-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+  flex-shrink: 0;
+  animation: ec-dot-blink 1.2s ease-in-out infinite;
+}
+
+@keyframes ec-pulse-badge {
+  0%, 100% { box-shadow: 0 0 8px rgba(255, 38, 38, 0.5); }
+  50%       { box-shadow: 0 0 20px rgba(255, 38, 38, 0.9); }
+}
+@keyframes ec-dot-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.15; }
+}
+
+/* ── Card body ── */
+.event-card-body {
+  padding: 1rem 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.45rem;
+}
+.event-card-title {
+  font-family: 'Alegreya SC', serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.35;
+  margin: 0;
+}
+.event-card-tagline {
+  font-family: 'Alegreya', serif;
+  font-size: 0.8rem;
+  color: rgba(225, 248, 232, 0.88);
+  line-height: 1.45;
+  flex: 1;
+}
+.event-card-location {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'Alegreya', serif;
+  font-size: 0.76rem;
+  color: #ff3333;
+  font-style: italic;
+}
+
+/* ── Countdown display ── */
+.event-countdown-display {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  margin-top: 0.35rem;
+  flex-wrap: nowrap;
+}
+.ec-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ec-digit-box {
+  min-width: 40px;
+  padding: 5px 3px 3px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(80, 240, 140, 0.2);
+  border-radius: 0;
+  text-align: center;
+  box-shadow:
+    0 0 5px rgba(60, 220, 120, 0.18),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.ec-digit-box.ec-tick {
+  /* No glow, no scale pop on second tick */
+  transform: none;
+}
+.ec-digit-number {
+  display: block;
+  font-family: 'Alegreya SC', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #6dffa0;
+  line-height: 1;
+  text-shadow:
+    0 0 5px rgba(100, 255, 150, 0.6),
+    0 0 12px rgba(60, 220, 100, 0.25);
+  letter-spacing: 0.01em;
+}
+.ec-digit-label {
+  display: block;
+  font-family: 'Alegreya', serif;
+  font-size: 0.5rem;
+  color: rgba(215, 245, 222, 0.82);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 2px;
+}
+.ec-separator {
+  font-family: 'Alegreya SC', serif;
+  font-size: 1rem;
+  color: rgba(94, 245, 154, 0.45);
+  line-height: 1;
+  padding-bottom: 9px;
+}
+
+/* ── Live message ── */
+.ec-live-message {
+  font-family: 'Alegreya SC', serif;
+  font-size: 0.92rem;
+  color: #6dffa0;
+  padding: 0.5rem 0 0.1rem;
+  text-shadow: 0 0 10px rgba(80, 240, 140, 0.5);
+}
+
+/* ── CTA button ── */
+.event-cta-btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 7px 16px;
+  background: #06402b;
+  color: #b8f0cc;
+  font-family: 'Alegreya SC', serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  border-radius: 0;
+  border: 1px solid rgba(6, 120, 70, 0.45);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.22s ease, box-shadow 0.22s ease, color 0.22s ease;
+  align-self: flex-start;
+}
+.event-cta-btn:hover {
+  background: #0a5c3a;
+  box-shadow: 0 3px 14px rgba(6, 100, 55, 0.5);
+  color: #e8fff0;
+}
+.event-cta-btn.ec-recap-btn {
+  background: #222;
+  border-color: rgba(120, 120, 120, 0.3);
+  color: #999;
+}
+.event-cta-btn.ec-recap-btn:hover {
+  background: #2e2e2e;
+  color: #bbb;
+}
+
+/* ── "View Details" text link ── */
+.event-detail-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'Alegreya SC', serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ff3333;
+  text-decoration: none;
+  margin-top: 0.25rem;
+  transition: color 0.2s ease, letter-spacing 0.2s ease;
+  letter-spacing: 0.04em;
+}
+.event-detail-link:hover {
+  color: #ff6666;
+  letter-spacing: 0.07em;
+}
+
+/* ── Mobile scroll hint ── */
+.events-scroll-hint {
+  display: none;
+  text-align: center;
+  padding: 0.3rem 0 1rem;
+  font-family: 'Alegreya SC', serif;
+  font-size: 0.65rem;
+  color: rgba(255, 60, 60, 0.9);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  animation: ec-scroll-hint 2.2s ease-in-out infinite;
+  user-select: none;
+}
+@keyframes ec-scroll-hint {
+  0%, 100% { opacity: 0.45; transform: translateX(0); }
+  50%       { opacity: 1;    transform: translateX(7px); }
+}
+@media (max-width: 899px) {
+  .events-scroll-hint { display: block; }
+}
+
+
+/* ==============================================
+   DESKTOP: Full-width horizontal card bands
+   ============================================== */
+@media (min-width: 900px) {
+  .events-countdown-section {
+    padding: 4rem 0 0;
+  }
+
+  .events-scroll-track {
+    flex-direction: column;
+    overflow: visible;
+    scroll-snap-type: none;
+    gap: 0;
+    padding: 0;
+  }
+
+  /* Each card is a full-viewport-width horizontal band */
+  .event-card {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+    min-width: unset;
+    flex-direction: row;
+    min-height: 340px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: transparent;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+  .event-card:last-child { border-bottom: none; }
+
+  .event-card:hover {
+    transform: none;
+    background: rgba(255,255,255,0.025);
+    box-shadow: inset 5px 0 0 #e61818;
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Alternate image side — odd: image left, even: image right */
+  .event-card:nth-child(odd)  { flex-direction: row; }
+  .event-card:nth-child(even) { flex-direction: row-reverse; }
+
+  .event-card:nth-child(even):hover {
+    box-shadow: inset -5px 0 0 #e61818;
+  }
+
+  /* Media panel — left side, fixed 42% width */
+  .event-card-media {
+    width: 42%;
+    flex-shrink: 0;
+    aspect-ratio: unset;
+    height: auto;
+    min-height: 340px;
+    border-radius: 0;
+  }
+  .event-card-media::after {
+    background: linear-gradient(to right, transparent 65%, rgba(3,15,7,0.35) 100%);
+  }
+  .event-card:nth-child(even) .event-card-media::after {
+    background: linear-gradient(to left, transparent 65%, rgba(3,15,7,0.35) 100%);
+  }
+
+  /* Body panel — right side */
+  .event-card-body {
+    flex: 1;
+    padding: 2.5rem 3.5rem;
+    justify-content: center;
+    gap: 0.7rem;
+  }
+
+  .event-card-title {
+    font-size: 1.6rem;
+    line-height: 1.25;
+  }
+  .event-card-tagline {
+    font-size: 0.98rem;
+    max-width: 560px;
+    flex: none;
+  }
+  .event-card-location {
+    font-size: 0.86rem;
+  }
+
+  .event-countdown-display {
+    gap: 7px;
+    margin-top: 0.55rem;
+    flex-wrap: nowrap;
+  }
+  .ec-digit-box {
+    min-width: 58px;
+    padding: 8px 5px 5px;
+    box-shadow:
+      0 0 5px rgba(60, 220, 120, 0.15),
+      inset 0 1px 0 rgba(255,255,255,0.04);
+  }
+  .ec-digit-number { font-size: 1.65rem; }
+  .ec-digit-label  { font-size: 0.58rem; }
+  .ec-separator    { font-size: 1.2rem; padding-bottom: 13px; }
+
+  .event-cta-btn {
+    font-size: 0.88rem;
+    padding: 10px 26px;
+    margin-top: 0.7rem;
+  }
+  .event-detail-link { font-size: 0.84rem; }
+
+  .event-category-badge {
+    font-size: 0.7rem;
+    padding: 5px 13px;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .events-countdown-section { padding: 2.5rem 0 0; }
+  .events-scroll-track { padding: 0.5rem 1rem 1.5rem; gap: 1px; }
+  .event-card { flex: 0 0 86vw; min-width: unset; max-width: 86vw; }
+  .ec-digit-box  { min-width: 34px; }
+  .ec-digit-number { font-size: 1.05rem; }
+  .ec-separator { font-size: 0.85rem; }
+}

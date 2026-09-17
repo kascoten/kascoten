@@ -76,11 +76,15 @@ function createNewsCard(article) {
   });
 
   const categoryLabel = 'Visitation';
+  const isVideo = article.imageUrl && /\.(mp4|webm|mov|avi|mkv)$/i.test(article.imageUrl);
 
   return `
     <div class="news-card" data-article-id="${article.id}" data-category="${article.category}">
       <div class="news-card-image">
-        <img src="${article.imageUrl}" alt="${article.title}" loading="lazy" class="lazy-image">
+        ${isVideo ? 
+          `<video src="${article.imageUrl}" autoplay muted loop playsinline loading="lazy" class="lazy-image" style="width: 100%; height: 100%; object-fit: cover;"></video>` : 
+          `<img src="${article.imageUrl}" alt="${article.title}" loading="lazy" class="lazy-image">`
+        }
         <span class="news-card-badge">${categoryLabel}</span>
       </div>
       <div class="news-card-content">

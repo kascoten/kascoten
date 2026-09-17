@@ -134,7 +134,7 @@ function renderArticles(articles, resetPage = true) {
           color: white;
           border: none;
           padding: 0.6rem 1rem;
-          border-radius: 4px;
+          border-radius: 0;
           cursor: pointer;
           font-weight: 600;
           font-size: 0.9rem;
@@ -151,7 +151,7 @@ function renderArticles(articles, resetPage = true) {
           color: white;
           border: none;
           padding: 0.6rem 1rem;
-          border-radius: 4px;
+          border-radius: 0;
           cursor: pointer;
           font-weight: 600;
           font-size: 0.9rem;
@@ -240,11 +240,15 @@ function createNewsCard(article) {
   });
 
   const categoryLabel = article.category.charAt(0).toUpperCase() + article.category.slice(1);
+  const isVideo = article.imageUrl && /\.(mp4|webm|mov|avi|mkv)$/i.test(article.imageUrl);
 
   return `
     <div class="news-card" data-article-id="${article.id}" data-category="${article.category}">
       <div class="news-card-image">
-        <img src="${article.imageUrl}" alt="${article.title}" loading="lazy" class="lazy-image">
+        ${isVideo ? 
+          `<video src="${article.imageUrl}" autoplay muted loop playsinline loading="lazy" class="lazy-image" style="width: 100%; height: 100%; object-fit: cover;"></video>` : 
+          `<img src="${article.imageUrl}" alt="${article.title}" loading="lazy" class="lazy-image">`
+        }
         <span class="news-card-badge">${categoryLabel}</span>
       </div>
       <div class="news-card-content">

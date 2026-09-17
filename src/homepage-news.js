@@ -115,11 +115,15 @@ function createRecentNewsCard(article) {
   });
 
   const categoryLabel = (article.category || 'General').charAt(0).toUpperCase() + (article.category || 'General').slice(1);
+  const isVideo = article.imageUrl && /\.(mp4|webm|mov|avi|mkv)$/i.test(article.imageUrl);
 
   return `
     <a href="post-detail.html?id=${article.id}" class="recent-news-card">
       <div class="recent-news-card-image">
-        <img src="${article.imageUrl}" alt="${article.title}" loading="lazy">
+        ${isVideo ? 
+          `<video src="${article.imageUrl}" autoplay muted loop playsinline loading="lazy" style="width: 100%; height: 100%; object-fit: cover;"></video>` : 
+          `<img src="${article.imageUrl}" alt="${article.title}" loading="lazy">`
+        }
       </div>
       <div class="recent-news-card-content">
         <span class="recent-news-card-category">${categoryLabel}</span>

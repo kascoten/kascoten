@@ -178,8 +178,21 @@ function renderArticleDetail(article) {
   document.getElementById('authorAvatar').textContent = getInitials(article.author);
 
   // Update featured image
-  document.getElementById('featuredImage').src = article.imageUrl;
-  document.getElementById('featuredImage').alt = article.title;
+  const featuredImageContainer = document.querySelector('.featured-image-container');
+  const isVideo = article.imageUrl && /\.(mp4|webm|mov|avi|mkv)$/i.test(article.imageUrl);
+  
+  if (isVideo) {
+    featuredImageContainer.innerHTML = `
+      <video id="featuredImage" src="${article.imageUrl}" controls autoplay muted loop playsinline class="featured-image" style="max-height: 70vh; width: 100%; object-fit: contain;"></video>
+      <div class="image-caption" id="imageCaption"></div>
+    `;
+  } else {
+    featuredImageContainer.innerHTML = `
+      <img id="featuredImage" src="${article.imageUrl}" alt="${article.title}" class="featured-image" loading="lazy">
+      <div class="image-caption" id="imageCaption"></div>
+    `;
+  }
+
   if (article.imageCaption) {
     document.getElementById('imageCaption').textContent = article.imageCaption;
   }

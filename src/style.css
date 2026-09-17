@@ -1081,7 +1081,7 @@ PARTNERSHIP SECTION
   .partner-logo {
     background: white;
     border: 2px solid #ddd;
-    border-radius: 10px;
+    border-radius: 0;
     padding: 15px;
     text-align: center;
     vertical-align: middle;
@@ -1092,7 +1092,7 @@ PARTNERSHIP SECTION
  .partner-logo {
   background: white;
   border: 2px solid #ddd;
-  border-radius: 10px;
+  border-radius: 0;
   padding: 15px;
   text-align: center;
   cursor: pointer;
@@ -1167,7 +1167,7 @@ LEADERSHIP SECTION STYLES
   .leader-card {
     text-align: left;
     border: 3px solid darkgreen; /* darker border */
-    border-radius: 10px;
+    border-radius: 0;
     padding: 15px;
     background: #E9EEEB;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1181,7 +1181,7 @@ LEADERSHIP SECTION STYLES
   /* Leader Image */
   .leader-card img {
     width: 100%;
-    border-radius: 6px;
+    border-radius: 0;
     object-fit: cover;
     transition: transform 0.3s ease;
   }
@@ -1625,7 +1625,7 @@ LEADERSHIP SECTION END!
   background: white;
   width: 90%;
   max-width: 500px;
-  border-radius: 12px;
+  border-radius: 0;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   max-height: 80vh;
   overflow-y: auto;
@@ -1702,7 +1702,7 @@ LEADERSHIP SECTION END!
 .comment-text {
   background: #f0f2f5;
   padding: 0.75rem 1rem;
-  border-radius: 18px;
+  border-radius: 0;
   margin-top: 0.25rem;
   font-size: 0.9rem;
   color: #65676b;
@@ -1726,7 +1726,7 @@ LEADERSHIP SECTION END!
   flex: 1;
   padding: 0.75rem 1rem;
   border: 1px solid #e5e5e5;
-  border-radius: 20px;
+  border-radius: 0;
   font-size: 0.9rem;
   outline: none;
   transition: border-color 0.2s;
@@ -1741,7 +1741,7 @@ LEADERSHIP SECTION END!
   background: green;
   color: white;
   border: none;
-  border-radius: 20px;
+  border-radius: 0;
   cursor: pointer;
   font-weight: 600;
   transition: background 0.2s;
@@ -1763,7 +1763,7 @@ LEADERSHIP SECTION END!
 
 .visitation-card {
   background: var(--light-bg);
-  border-radius: 6px;
+  border-radius: 0;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1916,7 +1916,7 @@ LEADERSHIP SECTION END!
 .comment-content p {
   background: #f0f2f5;
   padding: 0.75rem 1rem;
-  border-radius: 18px;
+  border-radius: 0;
   font-size: 0.9rem;
   color: #65676b;
   margin: 0;
@@ -1968,7 +1968,7 @@ LEADERSHIP SECTION END!
 
 .recent-news-card {
   background: var(--white);
-  border-radius: 8px;
+  border-radius: 0;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
@@ -2013,7 +2013,7 @@ LEADERSHIP SECTION END!
   background: var(--kascoten-red);
   color: var(--white);
   padding: 0.3rem 0.7rem;
-  border-radius: 15px;
+  border-radius: 0;
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -2079,7 +2079,7 @@ LEADERSHIP SECTION END!
   background: var(--kascoten-green);
   color: var(--white);
   padding: 1rem 2rem;
-  border-radius: 4px;
+  border-radius: 0;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
